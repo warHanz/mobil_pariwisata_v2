@@ -24,6 +24,8 @@ class ArticleCategoryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $navigationGroup = 'Category';
+
     protected static ?string $navigationLabel = 'Article Category';
 
     public static function form(Form $form): Form

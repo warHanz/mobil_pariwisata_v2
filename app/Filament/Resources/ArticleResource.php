@@ -6,18 +6,21 @@ use Carbon\Carbon;
 use Filament\Forms;
 use Filament\Tables;
 use App\Models\Article;
+use Filament\Forms\Set;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
 use App\Models\ArticleCategory;
 use Filament\Resources\Resource;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Cache;
 use Filament\Forms\Components\Select;
+use Illuminate\Support\Facades\Cache;
 use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\ArticleResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -26,7 +29,7 @@ class ArticleResource extends Resource
 {
     protected static ?string $model = Article::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     protected static ?string $navigationLabel = 'Article';
 
@@ -41,10 +44,8 @@ class ArticleResource extends Resource
         return $form->schema([
             Select::make('article_category_id')->label('Article Category')->options($categoryOptions)->searchable()->required(),
 
-            TextInput::make('title')->required(),
+            TextInput::make('title')->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state)))->required(),
             TextInput::make('slug')->required(),
-            Textarea::make('desc')->required(),
-            FileUpload::make('img')->label('Image')->directory('article')->image()->required(),
             Select::make('status')
                 ->label('status')
                 ->options([
@@ -53,6 +54,8 @@ class ArticleResource extends Resource
                 ])
                 ->default('publish')
                 ->required(),
+            FileUpload::make('img')->label('Image')->directory('article')->image()->maxSize(10240)->columnSpan(2)->required(),
+            RichEditor::make('desc')->columnSpan(2)->required(),
             TextInput::make('publish_date')->type('date')->required(),
         ]);
     }
@@ -61,17 +64,19 @@ class ArticleResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title'),
-                TextColumn::make('articlecategory.name')->label('Article Category'),
-                TextColumn::make('views'),
-                ImageColumn::make('img')->label('Image'),
-                TextColumn::make('publish_date')->label('Publish Date')->formatStateUsing(fn($state) => Carbon::parse($state)->format('d M Y')),
+                TextColumn::make('title')->sortable()->searchable(),
+                TextColumn::make('articlecategory.name')->label('Article Category')->sortable()->searchable(),
+                TextColumn::make('views')->sortable()->searchable(),
+                ImageColumn::make('img')->label('Image')->sortable()->searchable(),
+                TextColumn::make('publish_date')->label('Publish Date')->formatStateUsing(fn($state) => Carbon::parse($state)->format('d M Y'))->sortable()->searchable(),
                 TextColumn::make('status')
                     ->label('Status')
                     ->formatStateUsing(fn($state) => ucfirst($state))
                     ->color(function ($state) {
                         return $state === 'publish' ? 'success' : 'danger';
-                    }),
+                    })
+                    ->sortable()
+                    ->searchable(),
             ])
             ->filters([
                 //

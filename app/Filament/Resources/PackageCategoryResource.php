@@ -23,6 +23,8 @@ class PackageCategoryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $navigationGroup = 'Category';
+
     protected static ?string $navigationLabel = 'Package Category';
 
     public static function form(Form $form): Form
