@@ -17,6 +17,7 @@ use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ArticleCategoryResource\Pages;
+use App\Filament\Resources\ArticleCategoryResource\Api\Transformers\ArticleCategoryTransformer;
 
 class ArticleCategoryResource extends Resource
 {
@@ -35,12 +36,15 @@ class ArticleCategoryResource extends Resource
 
     public static function table(Table $table): Table
     {
+        $response = Http::get('http://127.0.0.1:8080/api/admin/article-categories');
+        $article_categories = $response->successful() ? $response->json() : [];
+
         return $table
             ->columns([TextColumn::make('name'), TextColumn::make('slug')])
             ->filters([
                 //
             ])
-            ->actions([Tables\Actions\EditAction::make()])
+            ->actions([Tables\Actions\EditAction::make(), Tables\Actions\DeleteAction::make()])
             ->bulkActions([Tables\Actions\BulkActionGroup::make([Tables\Actions\DeleteBulkAction::make()])]);
     }
 
@@ -58,5 +62,10 @@ class ArticleCategoryResource extends Resource
             'create' => Pages\CreateArticleCategory::route('/create'),
             'edit' => Pages\EditArticleCategory::route('/{record}/edit'),
         ];
+    }
+
+    public static function getApiTransformer()
+    {
+        return ArticleCategoryTransformer::class;
     }
 }

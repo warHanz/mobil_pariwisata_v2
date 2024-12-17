@@ -10,12 +10,14 @@ use Filament\Tables\Table;
 use App\Models\PackageTour;
 use App\Models\PackageCategory;
 use Filament\Resources\Resource;
+use Illuminate\Support\Facades\Http;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\PackageTourResource\Pages;
@@ -38,7 +40,7 @@ class PackageTourResource extends Resource
         }
 
         return $form->schema([
-            Select::make('article_category_id')->label('Article Category')->options($categoryOptions)->searchable()->required(),
+            Select::make('package_category_id')->label('Package Category')->options($categoryOptions)->searchable()->required(),
 
             TextInput::make('title')->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state)))->required(),
             TextInput::make('slug')->required(),
@@ -58,6 +60,9 @@ class PackageTourResource extends Resource
 
     public static function table(Table $table): Table
     {
+        $response = Http::get('http://127.0.0.1:8080/api/admin/package-categories');
+        $package_categories = $response->successful() ? $response->json() : [];
+
         return $table
             ->columns([
                 TextColumn::make('title'),

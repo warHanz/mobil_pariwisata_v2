@@ -29,30 +29,20 @@ class PackageCategoryResource extends Resource
 
     public static function form(Form $form): Form
     {
-        $response = Http::get('http://127.0.0.1:8080/api/admin/package-categories');
-        $package_categories = [];
-
-        if ($response->successful()) {
-            $package_categories = $response->json()['package_category'] ?? [];
-        }
-
-        $categoryOptions = collect($package_categories)
-            ->mapWithKeys(function ($category) {
-                return [$category['id'] => $category['name']];
-            })
-            ->toArray();
-
         return $form->schema([TextInput::make('name')->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state)))->required(), TextInput::make('slug')->required()]);
     }
 
     public static function table(Table $table): Table
     {
+        $response = Http::get('http://127.0.0.1:8080/api/admin/package-categories');
+        $package_categories = $response->successful() ? $response->json() : [];
+
         return $table
             ->columns([TextColumn::make('name'), TextColumn::make('slug')])
             ->filters([
                 //
             ])
-            ->actions([Tables\Actions\EditAction::make()])
+            ->actions([Tables\Actions\EditAction::make(), Tables\Actions\DeleteAction::make()])
             ->bulkActions([Tables\Actions\BulkActionGroup::make([Tables\Actions\DeleteBulkAction::make()])]);
     }
 

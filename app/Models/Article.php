@@ -17,26 +17,38 @@ class Article extends Model
 
     protected $guarded = [];
 
-    public function getRows()
+    public function getRows($keyword = null)
     {
         try {
-            $response = Http::get('http://127.0.0.1:8080/api/admin/articles'); //
+            $response = Http::get('http://127.0.0.1:8080/api/admin/articles'); // Endpoint API untuk artikel
             if ($response->successful()) {
-                $article = $response->json();
+                $articles = $response->json();
 
-                if (isset($article['article']) && is_array($article['article'])) {
-                    return Arr::map($article['article'], function ($item) {
-                        return Arr::only($item, ['id', 'user_id', 'article_category_id', 'title', 'slug', 'desc', 'img', 'status', 'views', 'publish_date']);
+                if (isset($articles['article']) && is_array($articles['article'])) {
+                    // Mengubah array menjadi koleksi Laravel
+                    $articles = collect($articles['article'])->map(function ($item) {
+                        return new Article([
+                            'id' => $item['id'],
+                            'user_id' => $item['user_id'],
+                            'article_category_id' => $item['article_category_id'],
+                            'title' => $item['title'],
+                            'slug' => $item['slug'],
+                            'desc' => $item['desc'],
+                            'img' => $item['img'],
+                            'status' => $item['status'],
+                            'views' => $item['views'],
+                            'publish_date' => $item['publish_date'],
+                        ]);
                     });
-                } else {
-                    return [];
+
+                    return $articles; // Mengembalikan koleksi
                 }
-            } else {
-                return [];
             }
         } catch (\Exception $e) {
-            return [];
+            return collect(); // Mengembalikan koleksi kosong
         }
+
+        return collect(); // Mengembalikan koleksi kosong
     }
 
     protected static function booted()

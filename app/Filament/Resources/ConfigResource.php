@@ -2,16 +2,17 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ConfigResource\Pages;
-use App\Filament\Resources\ConfigResource\RelationManagers;
-use App\Models\Config;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Config;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\ConfigResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\ConfigResource\RelationManagers;
 
 class ConfigResource extends Resource
 {
@@ -30,6 +31,9 @@ class ConfigResource extends Resource
 
     public static function table(Table $table): Table
     {
+        $response = Http::get('http://127.0.0.1:8080/api/admin/configs');
+        $article_categories = $response->successful() ? $response->json() : [];
+
         return $table
             ->columns([
                 //
