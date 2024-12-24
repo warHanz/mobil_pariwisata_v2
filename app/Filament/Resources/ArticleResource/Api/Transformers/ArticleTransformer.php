@@ -23,7 +23,9 @@ class ArticleTransformer extends JsonResource
             'desc' => $this->desc,
             'img' => $this->img,
             'status' => $this->status,
-            // 'publish_date' => $this->publish_date,
+            'views' => $this->views,
+            'publish_date' => $this->publish_date,
+            'updated_at' => $this->updated_at,
         ];
     }
 }

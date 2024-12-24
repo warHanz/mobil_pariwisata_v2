@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\VehicleCategoryResource\Pages;
 use App\Filament\Resources\VehicleCategoryResource\RelationManagers;
+use App\Filament\Resources\VehicleCategoryResource\Api\Transformers\VehicleCategoryTransformer;
 
 class VehicleCategoryResource extends Resource
 {
@@ -71,5 +72,10 @@ class VehicleCategoryResource extends Resource
             'create' => Pages\CreateVehicleCategory::route('/create'),
             'edit' => Pages\EditVehicleCategory::route('/{record}/edit'),
         ];
+    }
+
+    public static function getApiTransformer()
+    {
+        return VehicleCategoryTransformer::class;
     }
 }

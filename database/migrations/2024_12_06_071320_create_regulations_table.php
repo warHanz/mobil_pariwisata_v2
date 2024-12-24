@@ -15,7 +15,6 @@ return new class extends Migration {
             $table->string('title');
             $table->longText('desc');
             $table->string('category');
-            $table->string('status');
             $table->date('publish_date');
             $table->timestamps();
         });

@@ -5,7 +5,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class RegulationTransformer extends JsonResource
 {
-
     /**
      * Transform the resource into an array.
      *
@@ -14,6 +13,13 @@ class RegulationTransformer extends JsonResource
      */
     public function toArray($request)
     {
-        return $this->resource->toArray();
+        // return $this->resource->toArray();
+
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'desc' => $this->desc,
+            'category' => $this->category,
+        ];
     }
 }

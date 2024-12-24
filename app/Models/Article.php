@@ -17,39 +17,7 @@ class Article extends Model
 
     protected $guarded = [];
 
-    public function getRows($keyword = null)
-    {
-        try {
-            $response = Http::get('http://127.0.0.1:8080/api/admin/articles'); // Endpoint API untuk artikel
-            if ($response->successful()) {
-                $articles = $response->json();
-
-                if (isset($articles['article']) && is_array($articles['article'])) {
-                    // Mengubah array menjadi koleksi Laravel
-                    $articles = collect($articles['article'])->map(function ($item) {
-                        return new Article([
-                            'id' => $item['id'],
-                            'user_id' => $item['user_id'],
-                            'article_category_id' => $item['article_category_id'],
-                            'title' => $item['title'],
-                            'slug' => $item['slug'],
-                            'desc' => $item['desc'],
-                            'img' => $item['img'],
-                            'status' => $item['status'],
-                            'views' => $item['views'],
-                            'publish_date' => $item['publish_date'],
-                        ]);
-                    });
-
-                    return $articles; // Mengembalikan koleksi
-                }
-            }
-        } catch (\Exception $e) {
-            return collect(); // Mengembalikan koleksi kosong
-        }
-
-        return collect(); // Mengembalikan koleksi kosong
-    }
+    protected $fillable = ['user_id', 'article_category_id', 'title', 'slug', 'desc', 'img', 'views', 'status', 'publish_date'];
 
     protected static function booted()
     {

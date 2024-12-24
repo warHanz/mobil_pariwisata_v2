@@ -5,7 +5,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class VehicleTransformer extends JsonResource
 {
-
     /**
      * Transform the resource into an array.
      *
@@ -14,6 +13,19 @@ class VehicleTransformer extends JsonResource
      */
     public function toArray($request)
     {
-        return $this->resource->toArray();
+        // return $this->resource->toArray();
+
+        return [
+            'id' => $this->id,
+            'vehicle_category_id' => $this->vehicle_category_id,
+            'title' => $this->title,
+            'slug' => $this->slug,
+            'desc' => $this->desc,
+            'img' => $this->img,
+            'status' => $this->status,
+            'views' => $this->views,
+            'publish_date' => $this->publish_date,
+            'updated_at' => $this->updated_at,
+        ];
     }
 }

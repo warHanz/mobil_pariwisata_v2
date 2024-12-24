@@ -5,7 +5,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class PackageCategoryTransformer extends JsonResource
 {
-
     /**
      * Transform the resource into an array.
      *
@@ -14,6 +13,12 @@ class PackageCategoryTransformer extends JsonResource
      */
     public function toArray($request)
     {
-        return $this->resource->toArray();
+        // return $this->resource->toArray();
+
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'slug' => $this->slug,
+        ];
     }
 }

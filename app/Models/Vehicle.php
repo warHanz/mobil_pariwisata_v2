@@ -14,27 +14,7 @@ class Vehicle extends Model
 
     protected $guarded = [];
 
-    public function getRows()
-    {
-        try {
-            $response = Http::get('http://127.0.0.1:8080/api/admin/vehicle'); //
-            if ($response->successful()) {
-                $package_tour = $response->json();
-
-                if (isset($package_tour['package_tour']) && is_array($package_tour['package_tour'])) {
-                    return Arr::map($package_tour['package_tour'], function ($item) {
-                        return Arr::only($item, ['id', 'vehicle_category_id', 'title', 'slug', 'desc', 'img', 'status', 'views', 'publish_date']);
-                    });
-                } else {
-                    return [];
-                }
-            } else {
-                return [];
-            }
-        } catch (\Exception $e) {
-            return [];
-        }
-    }
+    protected $fillable = ['vehicle_category_id', 'title', 'slug', 'desc', 'img', 'views', 'status', 'publish_date'];
 
     protected static function booted()
     {

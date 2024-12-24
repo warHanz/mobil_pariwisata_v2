@@ -9,10 +9,13 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Illuminate\Support\Facades\Http;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\ConfigResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ConfigResource\RelationManagers;
+use App\Filament\Resources\ConfigResource\Api\Transformers\ConfigTransformer;
 
 class ConfigResource extends Resource
 {
@@ -24,9 +27,7 @@ class ConfigResource extends Resource
 
     public static function form(Form $form): Form
     {
-        return $form->schema([
-            //
-        ]);
+        return $form->schema([TextInput::make('name')->required(), TextInput::make('value')->required()]);
     }
 
     public static function table(Table $table): Table
@@ -35,9 +36,7 @@ class ConfigResource extends Resource
         $article_categories = $response->successful() ? $response->json() : [];
 
         return $table
-            ->columns([
-                //
-            ])
+            ->columns([TextColumn::make('name')->sortable()->size('xs')->searchable(), TextColumn::make('value')->sortable()->size('xs')->searchable()])
             ->filters([
                 //
             ])
@@ -59,5 +58,10 @@ class ConfigResource extends Resource
             'create' => Pages\CreateConfig::route('/create'),
             'edit' => Pages\EditConfig::route('/{record}/edit'),
         ];
+    }
+
+    public static function getApiTransformer()
+    {
+        return ConfigTransformer::class;
     }
 }

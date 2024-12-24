@@ -15,24 +15,7 @@ class ArticleCategory extends Model
 
     protected $guarded = [];
 
-    public static function getFromApi()
-    {
-        try {
-            $response = Http::get('http://127.0.0.1:8080/api/admin/article-categories'); //
-
-            if ($response->successful()) {
-                $article_categories = $response->json()['article_category'] ?? [];
-
-                return Arr::map($article_categories, function ($item) {
-                    return Arr::only($item, ['id', 'name', 'slug']);
-                });
-            } else {
-                return [];
-            }
-        } catch (\Exception $e) {
-            return [];
-        }
-    }
+    protected $fillable = ['name', 'slug'];
 
     //relation has many category ke article
     public function Articles(): HasMany

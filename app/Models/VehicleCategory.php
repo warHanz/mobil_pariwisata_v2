@@ -13,28 +13,7 @@ class VehicleCategory extends Model
 
     protected $guarded = [];
 
-    public function getRows()
-    {
-        try {
-            $response = Http::get('http://127.0.0.1:8080/api/admin/vehicle-categories');
-
-            if ($response->successful()) {
-                $vehicle_category = $response->json();
-
-                if (isset($vehicle_category['vehicle_category']) && is_array($vehicle_category['vehicle_category'])) {
-                    return Arr::map($vehicle_category['vehicle_category'], function ($item) {
-                        return Arr::only($item, ['id', 'name', 'slug']);
-                    });
-                } else {
-                    return [];
-                }
-            } else {
-                return [];
-            }
-        } catch (\Exception $e) {
-            return [];
-        }
-    }
+    protected $fillable = ['name', 'slug'];
 
     //relation has many category ke vehicle
     public function Vehicles(): HasMany

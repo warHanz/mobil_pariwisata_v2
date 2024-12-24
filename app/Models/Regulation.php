@@ -9,5 +9,5 @@ class Regulation extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'desc', 'category', 'status', 'publish_date'];
+    protected $fillable = ['title', 'category', 'desc'];
 }

@@ -16,6 +16,7 @@ use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\PackageCategoryResource\Pages;
+use App\Filament\Resources\PackageCategoryResource\Api\Transformers\PackageCategoryTransformer;
 
 class PackageCategoryResource extends Resource
 {
@@ -60,5 +61,10 @@ class PackageCategoryResource extends Resource
             'create' => Pages\CreatePackageCategory::route('/create'),
             'edit' => Pages\EditPackageCategory::route('/{record}/edit'),
         ];
+    }
+
+    public static function getApiTransformer()
+    {
+        return PackageCategoryTransformer::class;
     }
 }

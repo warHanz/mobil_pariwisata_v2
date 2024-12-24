@@ -22,6 +22,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\PackageTourResource\Pages;
 use App\Filament\Resources\PackageTourResource\RelationManagers;
+use App\Filament\Resources\PackageTourResource\Api\Transformers\PackageTourTransformer;
 
 class PackageTourResource extends Resource
 {
@@ -98,5 +99,10 @@ class PackageTourResource extends Resource
             'create' => Pages\CreatePackageTour::route('/create'),
             'edit' => Pages\EditPackageTour::route('/{record}/edit'),
         ];
+    }
+
+    public static function getApiTransformer()
+    {
+        return PackageTourTransformer::class;
     }
 }
