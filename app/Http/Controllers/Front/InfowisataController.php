@@ -21,13 +21,13 @@ class InfowisataController extends Controller
                 ->whereStatus(1)
                 ->where('title', 'like', '%' . $keyword . '%')
                 ->latest()
-                ->paginate(3); // Pastikan hanya paginate yang digunakan
+                ->paginate(2); // Pastikan hanya paginate yang digunakan
         } else {
             // Jika tidak ada keyword, ambil artikel terbaru tanpa filter
             $articles = Article::with(['ArticleCategory', 'User'])
                 ->whereStatus(1)
                 ->latest()
-                ->paginate(3); // Gunakan paginate yang sama
+                ->paginate(2); // Gunakan paginate yang sama
         }
 
         // Mengambil artikel terbaru

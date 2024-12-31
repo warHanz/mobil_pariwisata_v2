@@ -24,6 +24,11 @@ class TableOverview extends BaseWidget
         return $table->columns([TextColumn::make('title')->sortable(), TextColumn::make('views')->sortable()->label('View Count')])->query(Article::query()->orderByDesc('views')->take(3));
     }
 
+    public function additionalTable(Table $table): Table
+    {
+        return $table->columns([TextColumn::make('model')->sortable()->label('Model'), TextColumn::make('price')->sortable()->label('Price')])->query(Vehicle::query()->orderByDesc('price')->take(5));
+    }
+
     public function getTabs(): array
     {
         return [
@@ -33,20 +38,6 @@ class TableOverview extends BaseWidget
                     return Article::query()->orderByDesc('views')->take(3); // Query Artikel
                 },
                 'columns' => [TextColumn::make('title')->sortable()->searchable(), TextColumn::make('views')->sortable()->label('View Count')],
-            ],
-            'Package Tours' => [
-                'view' => 'filament.widgets.dashboard-widget', // Tampilan untuk Paket Tour
-                'table' => function () {
-                    return PackageTour::query()->orderByDesc('price')->take(3); // Query Paket Tour
-                },
-                'columns' => [TextColumn::make('name')->sortable(), TextColumn::make('price')->sortable()->label('Price')],
-            ],
-            'Vehicles' => [
-                'view' => 'filament.widgets.dashboard-widget', // Tampilan untuk Kendaraan
-                'table' => function () {
-                    return Vehicle::query()->orderByDesc('price')->take(3); // Query Kendaraan
-                },
-                'columns' => [TextColumn::make('model')->sortable(), TextColumn::make('price')->sortable()->label('Price')],
             ],
         ];
     }

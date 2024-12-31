@@ -2,168 +2,171 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="GYm,fitness,business,company,agency,multipurpose,modern,bootstrap4">
-
-    <!-- theme meta -->
-    <meta name="theme-name" content="gymfit" />
-    <meta name="author" content="Themefisher.com">
-
-    {{-- <title>{{ $config['blogname'] }}</title> --}}
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>{{ $config['author'] }}</title>
+    <meta name="description" content="{{ $config['description'] }}">
+    <meta name="keywords" content="{{ $config['keywords'] }}">
+    <meta name="author" content="{{ $config['author'] }}">
+    <meta name="robots" content="{{ $config['robots'] }}">
+    <meta name="language" content="{{ $config['robots'] }}">
+    <meta name="og:type" content="{{ $config['og_type'] }}">
+    <meta name="og:title" content="{{ $config['og_title'] }}">
+    <meta property="og:description" content="{{ $config['og_description'] }}">
+    <meta property="og:image" content="none">
+    <meta property="og:url" content="none">
+    <meta property="og:locale" content="{{ $config['og_locale'] }}">
+    <meta property="og:site_name" content="{{ $config['author'] }}">
 
     <!-- Favicons -->
-    <link href="{{ asset('JMT/assets/img/logo.jpg') }}" rel="icon">
-    <link href="{{ asset('JMT/assets/img/logo.jpg') }}" rel="apple-touch-icon">
+    <link href="{{ asset('frontend/assets/img/logo/logoatj.svg') }}" rel="icon">
+    <link href="{{ asset('frontend/assets/img/logo/logoatj.svg') }}" rel="apple-touch-icon">
 
-    <!-- bootstrap.min css -->
-    <link rel="stylesheet" href="{{ asset('frontend/plugins/bootstrap/css/bootstrap.min.css') }}">
-    <!-- Icofont Css -->
-    <link rel="stylesheet" href="{{ asset('frontend/plugins/icofont/icofont.min.css') }}">
-    <!-- Themify Css -->
-    <link rel="stylesheet" href="{{ asset('frontend/plugins/themify/css/themify-icons.css') }}">
-    <!-- animate.css -->
-    <link rel="stylesheet"
-        href="{{ asset('frontend/plugins/animate-css/animate.css') }}plugins/animate-css/animate.css">
-    <!-- Magnify Popup -->
-    <link rel="stylesheet" href="{{ asset('frontend/plugins/magnific-popup/dist/magnific-popup.css') }}">
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="{{ asset('frontend/plugins/slick-carousel/slick/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/plugins/slick-carousel/slick/slick-theme.css') }}">
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{{ asset('frontend/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="{{ asset('frontend/assets/css/main.css') }}" rel="stylesheet">
 
 </head>
 
-<!-- Section Menu Start -->
-<!-- Header Start -->
-<nav class="navbar navbar-expand-lg navigation fixed-top" id="navbar">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-            <h2 class="text-white text-capitalize"></i>JB<span class="text-color">Trans</span></h2>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsid"
-            aria-controls="navbarsid" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="ti-view-list"></span>
-        </button>
-        <div class="collapse text-center navbar-collapse" id="navbarsid">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ asset('/') }}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ route('infowisata') }}">Info Wisata</a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="pricing.html">Artikel</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Blog.</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="blog.html">Blog Grid</a></li>
-                        <li><a class="dropdown-item" href="blog-sidebar.html">Blog Sidebar</a></li>
-                        <li><a class="dropdown-item" href="blog-single.html">Blog Details</a></li>
-                    </ul>
-                </li>
-                {{-- <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li> --}}
-            </ul>
-            <div class="my-md-0 ml-lg-4 mt-4 mt-lg-0 ml-auto text-lg-right mb-3 mb-lg-0">
-                <a href="tel:+23-345-67890">
-                    <h3 class="text-color mb-0"><i class="ti-mobile mr-2"></i>+23-563-5688</h3>
-                </a>
-            </div>
-        </div>
-    </div>
-</nav>
+<body class="index-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div
+            class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-@yield('content')
+            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+                <h1 class="sitename">{{ $config['sitename'] }}</h1>
+            </a>
 
-<!-- Section Footer Start -->
-<!-- footer Start -->
-<footer class="footer bg-black-50">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
-                <h2 class="text-white mb-4">GymFit</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus illo ad quo sunt maiores, sint
-                    nostrum omnis eaque cumque dolorum.</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-
-
-            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                <div class="footer-widget recent-blog">
-                    <h4 class="mb-4 text-white letter-spacing text-uppercase">Recents Posts</h4>
-                    <div>
-                        <a href="blog-single.html"class="text-white">Claritas est etiam processus dynamicus</a>
-                        <p class="text-sm mt-2 text-white-50">30 february 2019</p>
-                    </div>
-                    <div class="mt-4">
-                        <a href="blog-single.html"class="text-white">Claritas est etiam processus dynamicus</a>
-                        <p class="text-sm mt-2 text-white-50">30 february 2019</p>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-5 mb-5 mb-lg-0">
-                <div class="footer-widget">
-                    <h4 class="mb-4 text-white letter-spacing text-uppercase">Quick Links</h4>
-                    <ul class="list-unstyled footer-menu lh-40 mb-0">
-                        {{-- <li><a href="about.html"><i class="ti-angle-double-right mr-2"></i>{{ $config['footer'] }}</a> --}}
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-5">
-                <div class="footer-widget">
-                    <h4 class="mb-4 text-white letter-spacing text-uppercase">Home location</h4>
-                    <p>Washington 6036 Richmond
-                        hwy., Alexandria, VA USA 22303 </p>
-                    <span class="text-white">+1 (409) 987–5874</span>
-                    <span class="text-white">info@demolink.org</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="row align-items-center mt-5 px-3 bg-black mx-1">
-            <div class="col-lg-4">
-                <p class="text-white mt-3">Gymfit © 2019 , Theme By <a href="https://themefisher.com/"
-                        class="text-color">Themefisher.com</a></p>
-            </div>
-            <div class="col-lg-6 ml-auto text-right">
-                <ul class="list-inline mb-0 footer-socials">
-                    <li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i
-                                class="ti-facebook"></i></a></li>
-                    <li class="list-inline-item"><a href="https://twitter.com/themefisher"><i
-                                class="ti-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="https://github.com/themefisher/"><i
-                                class="ti-github"></i></a></li>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    {{-- <li><a href="#about">About</a></li> --}}
+                    <li><a href="{{ url('vehicle') }}">Price</a></li>
+                    <li><a href="{{ url('tour_package') }}">Tour Package</a></li>
+                    <li><a href="{{ url('regulation') }}">Term of Conditions</a></li>
+                    <li><a href="{{ url('blog') }}">Blog</a></li>
+                    <li><a href="{{ url('contact') }}">Contact</a></li>
                 </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+            <a class="btn-getstarted" href="https://wa.me/62895391474416?text=Hi kak?" target="_black">WhatsApp</a>
+
+        </div>
+    </header>
+
+
+
+    @yield('content')
+
+    <!-- Section Footer Start -->
+    <!-- footer Start -->
+    <footer id="footer" class="footer">
+
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <span class="sitename">{{ $config['author'] }}</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p>{{ $config['location'] }}</p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>{{ $config['phone'] }}</span></p>
+                        <p><strong>Email:</strong> <span>{{ $config['email'] }}</span></p>
+                    </div>
+                    <div class="social-links d-flex mt-4">
+                        <a href=""><i class="bi bi-twitter-x"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ url('vehicle') }}">Price</a></li>
+                        <li><a href="#">Reservation</a></li>
+                        <li><a href="{{ url('tour_package') }}">Tour Package</a></li>
+                        <li><a href="{{ url('regulation') }}">Terms of condition</a></li>
+                        <li><a href="{{ url('blog') }}">Blog</a></li>
+                        <li><a href="{{ url('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Product Management</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Hic solutasetp</h4>
+                    <ul>
+                        <li><a href="#">Molestiae accusamus iure</a></li>
+                        <li><a href="#">Excepturi dignissimos</a></li>
+                        <li><a href="#">Suscipit distinctio</a></li>
+                        <li><a href="#">Dilecta</a></li>
+                        <li><a href="#">Sit quas consectetur</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Nobis illum</h4>
+                    <ul>
+                        <li><a href="#">Ipsam</a></li>
+                        <li><a href="#">Laudantium dolorum</a></li>
+                        <li><a href="#">Dinera</a></li>
+                        <li><a href="#">Trodelas</a></li>
+                        <li><a href="#">Flexo</a></li>
+                    </ul>
+                </div>
+
             </div>
         </div>
-    </div>
-</footer>
 
-<!--  Essential Scripts =====================================-->
-<!-- Main jQuery -->
-<script src="{{ asset('frontend/plugins/jquery/jquery.js') }}"></script>
-<!-- Bootstrap 4.3.1 -->
-<script src="{{ asset('frontend/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
-<!-- Slick Slider -->
-<script src="{{ asset('frontend/plugins/slick-carousel/slick/slick.min.js') }}"></script>
-<!--  Magnific Popup-->
-<script src="{{ asset('frontend/plugins/magnific-popup/dist/jquery.magnific-popup.min.js') }}"></script>
-<!-- Form Validator -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
-<!-- Google Map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
-<script src="{{ asset('frontend/plugins/plugins/google-map/gmap.js') }}"></script>
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">{{ $config['author'] }}</strong> <span>All
+                    Rights Reserved</span></p>
 
-<script src="{{ asset('frontend/js/script.js') }}"></script>
+        </div>
+
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{{ asset('frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ asset('frontend/assets/vendor/aos/aos.js') }}"></script>
+    <script src="{{ asset('frontend/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+
+    <!-- Main JS File -->
+    <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
+
+    @stack('js')
 
 </body>
 

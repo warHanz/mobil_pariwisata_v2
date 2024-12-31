@@ -46,7 +46,7 @@
                     <!-- Blog post-->
                     <div class="card mb-4 shadow-sm">
                         <a href="{{ url('p/' . $item->slug) }}"><img class="card-img-top post-img"
-                                src="{{ asset('storage/back/' . $item->img) }}" alt="..." /></a>
+                                src="{{ asset('storage/' . $item->img) }}" alt="..." /></a>
                         <div class="card-body card-height">
                             <div class="small text-muted">
                                 {{ $item->created_at->format('d-m-Y') }}

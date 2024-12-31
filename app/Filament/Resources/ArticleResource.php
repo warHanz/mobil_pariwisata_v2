@@ -52,10 +52,10 @@ class ArticleResource extends Resource
             Select::make('status')
                 ->label('status')
                 ->options([
-                    'publish' => 'Publish',
-                    'private' => 'Private',
+                    '1' => 'Publish',
+                    '0' => 'Private',
                 ])
-                ->default('publish')
+                ->default('1')
                 ->required(),
             FileUpload::make('img')->label('Image')->directory('article')->image()->maxSize(10240)->columnSpan(2)->required(),
             RichEditor::make('desc')->columnSpan(2)->required(),
@@ -67,6 +67,9 @@ class ArticleResource extends Resource
     {
         $response = Http::get('http://127.0.0.1:8080/api/admin/article-categories');
         $article_categories = $response->successful() ? $response->json() : [];
+
+        $responseArticles = Http::get('http://127.0.0.1:8080/api/admin/articles');
+        $articles = $responseArticles->successful() ? $responseArticles->json() : [];
 
         return $table
             ->columns([
@@ -84,7 +87,7 @@ class ArticleResource extends Resource
                     ->updateStateUsing(function ($record, $state) {
                         // Simpan status ke database
                         $record->update([
-                            'status' => $state ? 'publish' : 'private',
+                            'status' => $state ? '1' : '0',
                         ]);
                     })
                     ->sortable()

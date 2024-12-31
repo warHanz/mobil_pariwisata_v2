@@ -33,14 +33,14 @@ class ConfigResource extends Resource
     public static function table(Table $table): Table
     {
         $response = Http::get('http://127.0.0.1:8080/api/admin/configs');
-        $article_categories = $response->successful() ? $response->json() : [];
+        $configs = $response->successful() ? $response->json() : [];
 
         return $table
-            ->columns([TextColumn::make('name')->sortable()->size('xs')->searchable(), TextColumn::make('value')->sortable()->size('xs')->searchable()])
+            ->columns([TextColumn::make('name')->sortable()->size('xs')->searchable(), TextColumn::make('value')->sortable()->size('xs')->limit(75)->searchable()])
             ->filters([
                 //
             ])
-            ->actions([Tables\Actions\EditAction::make()])
+            ->actions([Tables\Actions\EditAction::make()->size('xs'), Tables\Actions\DeleteAction::make()])
             ->bulkActions([Tables\Actions\BulkActionGroup::make([Tables\Actions\DeleteBulkAction::make()])]);
     }
 
