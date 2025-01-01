@@ -4,7 +4,7 @@
     <!-- Page Title -->
     <div class="page-title bg-gray">
         <div class="container">
-            <h1>Blog</h1>
+            <h1>All Car</h1>
             <nav class="breadcrumbs">
                 <ol>
                     <li><a href="{{ url('/') }}">Price</a></li>
@@ -14,43 +14,237 @@
         </div>
     </div><!-- End Page Title -->
 
-    <!-- Section Blog start -->
-    <section class="section blog light-background">
-        <div class="container">
-            <div class="row">
-                <!-- Blog entries-->
-                <div class="col-lg-8">
-                    <!-- Nested row for non-featured blog posts-->
-                    <div class="row">
-                        @foreach ($vehicles as $item)
-                            <div class="col-lg-6">
-                                <!-- Blog post-->
-                                <div class="card mb-4">
-                                    <a href="{{ url('p/' . $item->slug) }}"><img class="card-img-top post-img"
-                                            src="{{ asset('storage/' . $item->img) }}" alt="..." /></a>
-                                    <div class="card-body card-height">
-                                        <div class="small text-muted">
-                                            {{ $item->created_at->format('d-m-Y') }}
-                                            <a
-                                                href="{{ url('vehicle-category/' . $item->VehicleCategory->slug) }}">{{ $item->VehicleCategory->name }}</a>
-                                        </div>
-                                        <h2 class="card-title h4">{{ $item->title }}</h2>
-                                        <p class="card-text">{{ Str::limit(strip_tags($item->desc), 150, '....') }}
-                                        </p>
-                                        <a class="btn btn-primary" href="{{ url('p/' . $item->slug) }}">Read more
-                                            →</a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
+    <section id="clients" class="clients section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-                    </div>
-                    <!-- Pagination-->
-                    <div class="pagination justify-content-center my-4">
-                        {{ $vehicles->links() }}
+            <!-- Page Title -->
+            <div class="page-title bg-gray">
+                <div class="container">
+                    <h1>City Car</h1>
+                </div>
+            </div><!-- End Page Title -->
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <!-- Card 1 -->
+                <div class="col">
+                    <div class="card">
+                        <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                        <div class="card-body">
+                            <h4>Lizard</h4>
+                            <p class="card-text">
+                                Lizards are a widespread group of squamate reptiles, with over
+                                6,000 species, ranging across all continents except Antarctica.
+                            </p>
+                            <div>
+                                <button class="btn btn-primary" type="button">WhatsApp</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Card 2 -->
+                <div class="col">
+                    <div class="card">
+                        <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                        <div class="card-body">
+                            <h4>Lizard</h4>
+                            <p class="card-text">
+                                Lizards are a widespread group of squamate reptiles, with over
+                                6,000 species, ranging across all continents except Antarctica.
+                            </p>
+                            <div>
+                                <button class="btn btn-primary" type="button">WhatsApp</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col">
+                    <div class="card">
+                        <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                        <div class="card-body">
+                            <h4>Lizard</h4>
+                            <p class="card-text">
+                                Lizards are a widespread group of squamate reptiles, with over
+                                6,000 species, ranging across all continents except Antarctica.
+                            </p>
+                            <div>
+                                <button class="btn btn-primary" type="button">WhatsApp</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col">
+                    <div class="card">
+                        <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                        <div class="card-body">
+                            <h4>Lizard</h4>
+                            <p class="card-text">
+                                Lizards are a widespread group of squamate reptiles, with over
+                                6,000 species, ranging across all continents except Antarctica.
+                            </p>
+                            <div>
+                                <button class="btn btn-primary" type="button">WhatsApp</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Title -->
+            <div class="page-title bg-gray">
+                <div class="container">
+                    <h1>MPV</h1>
+                </div>
+            </div><!-- End Page Title -->
+
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <!-- Card 1 -->
+                <div class="col">
+                    <div class="card">
+                        <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                        <div class="card-body">
+                            <h4>Lizard</h4>
+                            <p class="card-text">
+                                Lizards are a widespread group of squamate reptiles, with over
+                                6,000 species, ranging across all continents except Antarctica.
+                            </p>
+                            <div>
+                                <button class="btn btn-primary" type="button">WhatsApp</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col">
+                    <div class="card">
+                        <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                        <div class="card-body">
+                            <h4>Lizard</h4>
+                            <p class="card-text">
+                                Lizards are a widespread group of squamate reptiles, with over
+                                6,000 species, ranging across all continents except Antarctica.
+                            </p>
+                            <div>
+                                <button class="btn btn-primary" type="button">WhatsApp</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col">
+                    <div class="card">
+                        <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                        <div class="card-body">
+                            <h4>Lizard</h4>
+                            <p class="card-text">
+                                Lizards are a widespread group of squamate reptiles, with over
+                                6,000 species, ranging across all continents except Antarctica.
+                            </p>
+                            <div>
+                                <button class="btn btn-primary" type="button">WhatsApp</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col">
+                    <div class="card">
+                        <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                        <div class="card-body">
+                            <h4>Lizard</h4>
+                            <p class="card-text">
+                                Lizards are a widespread group of squamate reptiles, with over
+                                6,000 species, ranging across all continents except Antarctica.
+                            </p>
+                            <div>
+                                <button class="btn btn-primary" type="button">WhatsApp</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Title -->
+            <div class="page-title bg-gray">
+                <div class="container">
+                    <h1>Micro Bus</h1>
+                </div>
+            </div><!-- End Page Title -->
+
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <!-- Card 1 -->
+                <div class="col">
+                    <div class="card">
+                        <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                        <div class="card-body">
+                            <h4>Lizard</h4>
+                            <p class="card-text">
+                                Lizards are a widespread group of squamate reptiles, with over
+                                6,000 species, ranging across all continents except Antarctica.
+                            </p>
+                            <div>
+                                <button class="btn btn-primary" type="button">WhatsApp</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col">
+                    <div class="card">
+                        <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                        <div class="card-body">
+                            <h4>Lizard</h4>
+                            <p class="card-text">
+                                Lizards are a widespread group of squamate reptiles, with over
+                                6,000 species, ranging across all continents except Antarctica.
+                            </p>
+                            <div>
+                                <button class="btn btn-primary" type="button">WhatsApp</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col">
+                    <div class="card">
+                        <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                        <div class="card-body">
+                            <h4>Lizard</h4>
+                            <p class="card-text">
+                                Lizards are a widespread group of squamate reptiles, with over
+                                6,000 species, ranging across all continents except Antarctica.
+                            </p>
+                            <div>
+                                <button class="btn btn-primary" type="button">WhatsApp</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col">
+                    <div class="card">
+                        <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                        <div class="card-body">
+                            <h4>Lizard</h4>
+                            <p class="card-text">
+                                Lizards are a widespread group of squamate reptiles, with over
+                                6,000 species, ranging across all continents except Antarctica.
+                            </p>
+                            <div>
+                                <button class="btn btn-primary" type="button">WhatsApp</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

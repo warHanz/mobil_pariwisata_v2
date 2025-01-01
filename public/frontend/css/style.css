@@ -7,6 +7,38 @@ body {
     color: rgba(0, 0, 0, 0.6);
 }
 
+.carousel-inner .carousel-item img {
+    max-width: 100%; /* Pastikan gambar tidak melebihi lebar container */
+    height: auto; /* Sesuaikan tinggi gambar secara proporsional */
+    object-fit: cover; /* Memastikan gambar tetap terlihat baik meskipun dipotong */
+}
+
+.card-img-top {
+    border-radius: 5px; /* Opsional: memberikan efek sudut melengkung pada gambar */
+}
+
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 200px; /* Pastikan gambar tetap proporsional di perangkat kecil */
+    }
+}
+
+@media (min-width: 768px) {
+    .card-img-top {
+        height: 300px; /* Tinggi default di layar besar */
+    }
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .whatsapp-float a {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
+
+
 h1,
 .h1,
 h2,

@@ -37,48 +37,39 @@
                     </div>
                 </div>
 
-                <div class="row stats-row gy-4 mt-5" data-aos="fade-up" data-aos-delay="500">
+                <div class="row stats-row gy-4 mt-5 justify-content-center text-center" data-aos="fade-up"
+                    data-aos-delay="500">
                     <div class="col-lg-3 col-md-6">
                         <div class="stat-item">
                             <div class="stat-icon">
-                                <i class="bi bi-trophy"></i>
+                                <i class="bi bi-file-earmark-text-fill"></i>
                             </div>
                             <div class="stat-content">
-                                <h4>3x Won Awards</h4>
-                                <p class="mb-0">Vestibulum ante ipsum</p>
+                                <h4>Article</Article>
+                                </h4>
+                                <p class="mb-0">Aritikel disini deck</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="stat-item">
                             <div class="stat-icon">
-                                <i class="bi bi-briefcase"></i>
+                                <i class="bi bi-map-fill"></i>
                             </div>
                             <div class="stat-content">
-                                <h4>6.5k Faucibus</h4>
-                                <p class="mb-0">Nullam quis ante</p>
+                                <h4>Tour Package</h4>
+                                <p class="mb-0">sini ku kasih tutor</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="stat-item">
                             <div class="stat-icon">
-                                <i class="bi bi-graph-up"></i>
+                                <i class="bi bi-car-front-fill"></i>
                             </div>
                             <div class="stat-content">
-                                <h4>80k Mauris</h4>
-                                <p class="mb-0">Etiam sit amet orci</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stat-item">
-                            <div class="stat-icon">
-                                <i class="bi bi-award"></i>
-                            </div>
-                            <div class="stat-content">
-                                <h4>6x Phasellus</h4>
-                                <p class="mb-0">Vestibulum ante ipsum</p>
+                                <h4>Rent Car</h4>
+                                <p class="mb-0">mau sewa apa cuma liat aja?</p>
                             </div>
                         </div>
                     </div>
@@ -141,21 +132,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="image-wrapper">
-                            <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
-                                <img src="assets/img/about-5.webp" alt="Business Meeting"
-                                    class="img-fluid main-image rounded-4">
-                                <img src="assets/img/about-2.webp" alt="Team Discussion"
-                                    class="img-fluid small-image rounded-4">
-                            </div>
-                            <div class="experience-badge floating">
-                                <h3>15+ <span>Years</span></h3>
-                                <p>Of experience in business service</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -168,123 +145,259 @@
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Features</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+                <h2>Mobil</h2>
+                <p>Jenis-Jenis Mobil Yang Kami Sewa kan</p>
             </div><!-- End Section Title -->
 
             <div class="container">
-
                 <div class="d-flex justify-content-center">
-
                     <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
 
                         <li class="nav-item">
                             <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
-                                <h4>Modisit</h4>
+                                <h4>City Car</h4>
                             </a>
                         </li><!-- End tab nav item -->
 
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
-                                <h4>Praesenti</h4>
+                                <h4>MPV</h4>
                             </a><!-- End tab nav item -->
 
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
-                                <h4>Explica</h4>
+                                <h4>Micro Bus</h4>
                             </a>
                         </li><!-- End tab nav item -->
-
                     </ul>
-
                 </div>
 
+                <!--City Car-->
                 <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-
                     <div class="tab-pane fade active show" id="features-tab-1">
-                        <div class="row">
-                            <div
-                                class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                                <h3>Voluptatem dignissimos provident</h3>
-                                <p class="fst-italic">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore
-                                    magna aliqua.
-                                </p>
-                                <ul>
-                                    <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea
-                                            commodo consequat.</span></li>
-                                    <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in
-                                            voluptate velit.</span></li>
-                                    <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea
-                                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta
-                                            storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-                                </ul>
+                        <div class="row row-cols-1 row-cols-md-4 g-4">
+                            <!-- Card 1 -->
+                            <div class="col">
+                                <div class="card">
+                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                                    <div class="card-body">
+                                        <h4>Lizard</h4>
+                                        <p class="card-text">
+                                            Lizards are a widespread group of squamate reptiles, with over
+                                            6,000 species, ranging across all continents except Antarctica.
+                                        </p>
+                                        <div>
+                                            <button class="btn btn-primary" type="button">WhatsApp</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                <img src="assets/img/features-illustration-1.webp" alt="" class="img-fluid">
+
+                            <!-- Card 2 -->
+                            <div class="col">
+                                <div class="card">
+                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                                    <div class="card-body">
+                                        <h4>Lizard</h4>
+                                        <p class="card-text">
+                                            Lizards are a widespread group of squamate reptiles, with over
+                                            6,000 species, ranging across all continents except Antarctica.
+                                        </p>
+                                        <div>
+                                            <button class="btn btn-primary" type="button">WhatsApp</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="col">
+                                <div class="card">
+                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                                    <div class="card-body">
+                                        <h4>Lizard</h4>
+                                        <p class="card-text">
+                                            Lizards are a widespread group of squamate reptiles, with over
+                                            6,000 species, ranging across all continents except Antarctica.
+                                        </p>
+                                        <div>
+                                            <button class="btn btn-primary" type="button">WhatsApp</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="col">
+                                <div class="card">
+                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                                    <div class="card-body">
+                                        <h4>Lizard</h4>
+                                        <p class="card-text">
+                                            Lizards are a widespread group of squamate reptiles, with over
+                                            6,000 species, ranging across all continents except Antarctica.
+                                        </p>
+                                        <div>
+                                            <button class="btn btn-primary" type="button">WhatsApp</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div><!-- End tab content item -->
-
-                    <div class="tab-pane fade" id="features-tab-2">
-                        <div class="row">
-                            <div
-                                class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                                <h3>Neque exercitationem debitis</h3>
-                                <p class="fst-italic">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore
-                                    magna aliqua.
-                                </p>
-                                <ul>
-                                    <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea
-                                            commodo consequat.</span></li>
-                                    <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in
-                                            voluptate velit.</span></li>
-                                    <li><i class="bi bi-check2-all"></i> <span>Provident mollitia neque rerum asperiores
-                                            dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</span></li>
-                                    <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea
-                                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta
-                                            storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                <img src="assets/img/features-illustration-2.webp" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div><!-- End tab content item -->
-
-                    <div class="tab-pane fade" id="features-tab-3">
-                        <div class="row">
-                            <div
-                                class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                                <h3>Voluptatibus commodi accusamu</h3>
-                                <ul>
-                                    <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea
-                                            commodo consequat.</span></li>
-                                    <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in
-                                            voluptate velit.</span></li>
-                                    <li><i class="bi bi-check2-all"></i> <span>Provident mollitia neque rerum asperiores
-                                            dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</span></li>
-                                </ul>
-                                <p class="fst-italic">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore
-                                    magna aliqua.
-                                </p>
-                            </div>
-                            <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                <img src="assets/img/features-illustration-3.webp" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div><!-- End tab content item -->
-
+                    </div>
                 </div>
 
-            </div>
+                <!--MPV-->
+                <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tab-pane fade active show" id="features-tab-2">
+                        <div class="row row-cols-1 row-cols-md-4 g-4">
+                            <!-- Card 1 -->
+                            <div class="col">
+                                <div class="card">
+                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                                    <div class="card-body">
+                                        <h4>Lizard</h4>
+                                        <p class="card-text">
+                                            Lizards are a widespread group of squamate reptiles, with over
+                                            6,000 species, ranging across all continents except Antarctica.
+                                        </p>
+                                        <div>
+                                            <button class="btn btn-primary" type="button">WhatsApp</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <!-- Card 2 -->
+                            <div class="col">
+                                <div class="card">
+                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                                    <div class="card-body">
+                                        <h4>Lizard</h4>
+                                        <p class="card-text">
+                                            Lizards are a widespread group of squamate reptiles, with over
+                                            6,000 species, ranging across all continents except Antarctica.
+                                        </p>
+                                        <div>
+                                            <button class="btn btn-primary" type="button">WhatsApp</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="col">
+                                <div class="card">
+                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                                    <div class="card-body">
+                                        <h4>Lizard</h4>
+                                        <p class="card-text">
+                                            Lizards are a widespread group of squamate reptiles, with over
+                                            6,000 species, ranging across all continents except Antarctica.
+                                        </p>
+                                        <div>
+                                            <button class="btn btn-primary" type="button">WhatsApp</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="col">
+                                <div class="card">
+                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                                    <div class="card-body">
+                                        <h4>Lizard</h4>
+                                        <p class="card-text">
+                                            Lizards are a widespread group of squamate reptiles, with over
+                                            6,000 species, ranging across all continents except Antarctica.
+                                        </p>
+                                        <div>
+                                            <button class="btn btn-primary" type="button">WhatsApp</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Micro Bus-->
+                <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tab-pane fade active show" id="features-tab-3">
+                        <div class="row row-cols-1 row-cols-md-4 g-4">
+                            <!-- Card 1 -->
+                            <div class="col">
+                                <div class="card">
+                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                                    <div class="card-body">
+                                        <h4>Lizard</h4>
+                                        <p class="card-text">
+                                            Lizards are a widespread group of squamate reptiles, with over
+                                            6,000 species, ranging across all continents except Antarctica.
+                                        </p>
+                                        <div>
+                                            <button class="btn btn-primary" type="button">WhatsApp</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="col">
+                                <div class="card">
+                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                                    <div class="card-body">
+                                        <h4>Lizard</h4>
+                                        <p class="card-text">
+                                            Lizards are a widespread group of squamate reptiles, with over
+                                            6,000 species, ranging across all continents except Antarctica.
+                                        </p>
+                                        <div>
+                                            <button class="btn btn-primary" type="button">WhatsApp</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="col">
+                                <div class="card">
+                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                                    <div class="card-body">
+                                        <h4>Lizard</h4>
+                                        <p class="card-text">
+                                            Lizards are a widespread group of squamate reptiles, with over
+                                            6,000 species, ranging across all continents except Antarctica.
+                                        </p>
+                                        <div>
+                                            <button class="btn btn-primary" type="button">WhatsApp</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="col">
+                                <div class="card">
+                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
+                                    <div class="card-body">
+                                        <h4>Lizard</h4>
+                                        <p class="card-text">
+                                            Lizards are a widespread group of squamate reptiles, with over
+                                            6,000 species, ranging across all continents except Antarctica.
+                                        </p>
+                                        <div>
+                                            <button class="btn btn-primary" type="button">WhatsApp</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section><!-- /Features Section -->
 
         <!-- Features Cards Section -->
