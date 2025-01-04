@@ -38,6 +38,7 @@
 
     <!-- Main CSS File -->
     <link href="{{ asset('frontend/assets/css/main.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 
 </head>
 
@@ -150,10 +151,13 @@
         </div>
 
     </footer>
-
+    <!-- WA -->
+    <a href="https://wa.me/6288225381206?text=Hi%20Qiscus" class="floating" target="_blank">
+        <i class="fab fa-whatsapp fab-icon"></i>
+    </a>
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i>
+            class="bi bi-arrow-up-short"></i>
     </a>
 
     <!-- Vendor JS Files -->
