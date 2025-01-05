@@ -6,32 +6,24 @@
 
     <!-- Page content-->
     <div class="main-wrapper">
-        <section class="page-title bg-2">
+        <!-- Page Title -->
+        <div class="page-title bg-gray">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item"><a href="/"
-                                    class="text-sm letter-spacing text-white text-uppercase font-weight-bold">Home</a>
-                            </li>
-                            <li class="list-inline-item"><span class="text-white">|</span></li>
-                            <li class="list-inline-item"><a href="#"
-                                    class="text-color text-uppercase text-sm letter-spacing">
-                                    {{ url('p/' . $article->ArticleCategory->slug) }} </a>
-                                {{ $article->ArticleCategory->name }}
-                            </li>
-                        </ul>
-                        <h1 class="text-lg text-white mt-2">{{ $article->title }}</h1>
-                    </div>
-                </div>
+                <h1>Blog</h1>
+                <nav class="breadcrumbs">
+                    <ol>
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li class="current">Blog Details</li>
+                    </ol>
+                </nav>
             </div>
-        </section>
+        </div><!-- End Page Title -->
 
         <div class="container py-3">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="card mb-4 shadow">
-                        <a href="{{ url('p/' . $article->slug) }}">
+                        <a href="{{ url('p/blog/' . $article->slug) }}">
                             <img class="card-img-top single-img" src="{{ asset('storage/' . $article->img) }}"
                                 alt="{{ $article->title }}" />
                         </a>

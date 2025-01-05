@@ -58,7 +58,7 @@
                             <div class="col-lg-6">
                                 <!-- Blog post-->
                                 <div class="card mb-4">
-                                    <a href="{{ url('p/' . $item->slug) }}">
+                                    <a href="{{ url('p/blog/' . $item->slug) }}">
                                         <img class="card-img-top post-img" src="{{ asset('storage/' . $item->img) }}"
                                             alt="{{ $item->title }}" />
                                     </a>
@@ -72,7 +72,8 @@
                                         </div>
                                         <h2 class="card-title h4">{{ $item->title }}</h2>
                                         <p class="card-text">{{ Str::limit(strip_tags($item->desc), 150, '....') }}</p>
-                                        <a class="btn btn-primary" href="{{ url('p/' . $item->slug) }}">Read more →</a>
+                                        <a class="btn btn-primary" href="{{ url('p/blog/' . $item->slug) }}">Read more
+                                            →</a>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +82,7 @@
 
 
                     <!-- Pagination-->
-                    <div class="pagination justify-content-center my-4">
+                    <div class="pagination justify-content-center my-6">
                         {{ $articles->links() }}
                     </div>
                 </div>

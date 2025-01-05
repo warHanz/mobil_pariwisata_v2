@@ -31,8 +31,7 @@
 
                     <div class="col-lg-6">
                         <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
-                            <img src="{{ asset('frontend/assets/img/illustration-1.webp') }}" alt="Hero Image"
-                                class="img-fluid">
+                            <img src="{{ asset('frontend/assets/img/img-home.png') }}" alt="Hero Image" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -47,7 +46,6 @@
                             <div class="stat-content">
                                 <h4>Article</Article>
                                 </h4>
-                                <p class="mb-0">Aritikel disini deck</p>
                             </div>
                         </div>
                     </div>
@@ -58,7 +56,6 @@
                             </div>
                             <div class="stat-content">
                                 <h4>Tour Package</h4>
-                                <p class="mb-0">sini ku kasih tutor</p>
                             </div>
                         </div>
                     </div>
@@ -69,7 +66,6 @@
                             </div>
                             <div class="stat-content">
                                 <h4>Rent Car</h4>
-                                <p class="mb-0">mau sewa apa cuma liat aja?</p>
                             </div>
                         </div>
                     </div>
@@ -96,47 +92,27 @@
                         <div class="row feature-list-wrapper">
                             <div class="col-md-6">
                                 <ul class="feature-list">
-                                    <li><i class="bi bi-check-circle-fill"></i> Lorem ipsum dolor sit amet</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Consectetur adipiscing elit</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Sed do eiusmod tempor</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Rent Car</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Tour Package</li>
                                 </ul>
                             </div>
                             <div class="col-md-6">
                                 <ul class="feature-list">
-                                    <li><i class="bi bi-check-circle-fill"></i> Incididunt ut labore et</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Dolore magna aliqua</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Ut enim ad minim veniam</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Rent Cat Wedding</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Tranfer and Drop</li>
                                 </ul>
                             </div>
                         </div>
-
-                        <div class="info-wrapper">
-                            <div class="row gy-4">
-                                <div class="col-lg-5">
-                                    <div class="profile d-flex align-items-center gap-3">
-                                        <img src="assets/img/avatar-1.webp" alt="CEO Profile" class="profile-image">
-                                        <div>
-                                            <h4 class="profile-name">Mario Smith</h4>
-                                            <p class="profile-position">CEO &amp; Founder</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7">
-                                    <div class="contact-info d-flex align-items-center gap-2">
-                                        <i class="bi bi-telephone-fill"></i>
-                                        <div>
-                                            <p class="contact-label">Call us anytime</p>
-                                            <p class="contact-number">+123 456-789</p>
-                                        </div>
-                                    </div>
-                                </div>
+                    </div>
+                    <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="image-wrapper">
+                            <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
+                                <img src="{{ asset('frontend/assets/img/about-us.png') }}" alt="img-about-us"
+                                    class="img-fluid main-image rounded-4">
                             </div>
                         </div>
-
                     </div>
                 </div>
-
-            </div>
 
         </section><!-- /About Section -->
 
@@ -152,7 +128,6 @@
             <div class="container">
                 <div class="d-flex justify-content-center">
                     <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
-
                         <li class="nav-item">
                             <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
                                 <h4>City Car</h4>
@@ -170,233 +145,132 @@
                                 <h4>Micro Bus</h4>
                             </a>
                         </li><!-- End tab nav item -->
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4">
+                                <h4>Bus</h4>
+                            </a>
+                        </li><!-- End tab nav item -->
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-5">
+                                <h4>Truck</h4>
+                            </a>
+                        </li><!-- End tab nav item -->
                     </ul>
                 </div>
 
-                <!--City Car-->
+                <!-- Tab Content -->
                 <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+                    <!-- City Car -->
                     <div class="tab-pane fade active show" id="features-tab-1">
-                        <div class="row row-cols-1 row-cols-md-4 g-4">
-                            <!-- Card 1 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
-                                    <div class="card-body">
-                                        <h4>Lizard</h4>
-                                        <p class="card-text">
-                                            Lizards are a widespread group of squamate reptiles, with over
-                                            6,000 species, ranging across all continents except Antarctica.
-                                        </p>
-                                        <div>
-                                            <button class="btn btn-primary" type="button">WhatsApp</button>
+                        <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+                            @foreach ($cityCars as $item)
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="{{ asset('storage/' . $item->img) }}" class="card-img-top"
+                                            alt="{{ $item->title }}" />
+                                        <div class="card-body">
+                                            <p class="card-text">{!! $item->desc !!}</p>
+                                            <div>
+                                                <a href="https://wa.me/62895391474416?text=Hai%20Kak,%20saya%20tertarik%20untuk%20memesan%20City%20Car%20ini%20apakah%20masih%20ready?"
+                                                    target="_blank" class="btn btn-success float-end">Pesan Sekarang</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- Card 2 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
-                                    <div class="card-body">
-                                        <h4>Lizard</h4>
-                                        <p class="card-text">
-                                            Lizards are a widespread group of squamate reptiles, with over
-                                            6,000 species, ranging across all continents except Antarctica.
-                                        </p>
-                                        <div>
-                                            <button class="btn btn-primary" type="button">WhatsApp</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card 3 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
-                                    <div class="card-body">
-                                        <h4>Lizard</h4>
-                                        <p class="card-text">
-                                            Lizards are a widespread group of squamate reptiles, with over
-                                            6,000 species, ranging across all continents except Antarctica.
-                                        </p>
-                                        <div>
-                                            <button class="btn btn-primary" type="button">WhatsApp</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card 4 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
-                                    <div class="card-body">
-                                        <h4>Lizard</h4>
-                                        <p class="card-text">
-                                            Lizards are a widespread group of squamate reptiles, with over
-                                            6,000 species, ranging across all continents except Antarctica.
-                                        </p>
-                                        <div>
-                                            <button class="btn btn-primary" type="button">WhatsApp</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
-                </div>
+                    <!-- End City Car -->
 
-                <!--MPV-->
-                <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-                    <div class="tab-pane fade active show" id="features-tab-2">
-                        <div class="row row-cols-1 row-cols-md-4 g-4">
-                            <!-- Card 1 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
-                                    <div class="card-body">
-                                        <h4>Lizard</h4>
-                                        <p class="card-text">
-                                            Lizards are a widespread group of squamate reptiles, with over
-                                            6,000 species, ranging across all continents except Antarctica.
-                                        </p>
-                                        <div>
-                                            <button class="btn btn-primary" type="button">WhatsApp</button>
+                    <!-- MPV -->
+                    <div class="tab-pane fade" id="features-tab-2">
+                        <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+                            @foreach ($mpvs as $item)
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="{{ asset('storage/' . $item->img) }}" class="card-img-top"
+                                            alt="MPV 1" />
+                                        <div class="card-body">
+                                            <p class="card-text">{!! $item->desc !!}</p>
+                                            <div>
+                                                <a href="https://wa.me/62895391474416?text=Hai%20Kak,%20saya%20tertarik%20untuk%20memesan%20MPV%20ini%20apakah%20masih%20ready?"
+                                                    target="_blank" class="btn btn-success">Pesan Sekarang</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- Card 2 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
-                                    <div class="card-body">
-                                        <h4>Lizard</h4>
-                                        <p class="card-text">
-                                            Lizards are a widespread group of squamate reptiles, with over
-                                            6,000 species, ranging across all continents except Antarctica.
-                                        </p>
-                                        <div>
-                                            <button class="btn btn-primary" type="button">WhatsApp</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card 3 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
-                                    <div class="card-body">
-                                        <h4>Lizard</h4>
-                                        <p class="card-text">
-                                            Lizards are a widespread group of squamate reptiles, with over
-                                            6,000 species, ranging across all continents except Antarctica.
-                                        </p>
-                                        <div>
-                                            <button class="btn btn-primary" type="button">WhatsApp</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card 4 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
-                                    <div class="card-body">
-                                        <h4>Lizard</h4>
-                                        <p class="card-text">
-                                            Lizards are a widespread group of squamate reptiles, with over
-                                            6,000 species, ranging across all continents except Antarctica.
-                                        </p>
-                                        <div>
-                                            <button class="btn btn-primary" type="button">WhatsApp</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
-                </div>
+                    <!-- End MPV -->
 
-                <!--Micro Bus-->
-                <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-                    <div class="tab-pane fade active show" id="features-tab-3">
-                        <div class="row row-cols-1 row-cols-md-4 g-4">
-                            <!-- Card 1 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
-                                    <div class="card-body">
-                                        <h4>Lizard</h4>
-                                        <p class="card-text">
-                                            Lizards are a widespread group of squamate reptiles, with over
-                                            6,000 species, ranging across all continents except Antarctica.
-                                        </p>
-                                        <div>
-                                            <button class="btn btn-primary" type="button">WhatsApp</button>
+                    <!-- Micro Bus -->
+                    <div class="tab-pane fade" id="features-tab-3">
+                        <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+                            @foreach ($microBuses as $item)
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="{{ asset('storage/' . $item->img) }}" class="card-img-top"
+                                            alt="Micro Bus 1" />
+                                        <div class="card-body">
+                                            <p class="card-text">{!! $item->desc !!}</p>
+                                            <div>
+                                                <a href="https://wa.me/62895391474416?text=Hai%20Kak,%20saya%20tertarik%20untuk%20memesan%20Micro%20Bus%20ini%20apakah%20masih%20ready?"
+                                                    target="_blank" class="btn btn-success">Pesan Sekarang</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- Card 2 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
-                                    <div class="card-body">
-                                        <h4>Lizard</h4>
-                                        <p class="card-text">
-                                            Lizards are a widespread group of squamate reptiles, with over
-                                            6,000 species, ranging across all continents except Antarctica.
-                                        </p>
-                                        <div>
-                                            <button class="btn btn-primary" type="button">WhatsApp</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card 3 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
-                                    <div class="card-body">
-                                        <h4>Lizard</h4>
-                                        <p class="card-text">
-                                            Lizards are a widespread group of squamate reptiles, with over
-                                            6,000 species, ranging across all continents except Antarctica.
-                                        </p>
-                                        <div>
-                                            <button class="btn btn-primary" type="button">WhatsApp</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card 4 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="/images/cards/1.jpg" class="card-img-top" alt="green iguana" />
-                                    <div class="card-body">
-                                        <h4>Lizard</h4>
-                                        <p class="card-text">
-                                            Lizards are a widespread group of squamate reptiles, with over
-                                            6,000 species, ranging across all continents except Antarctica.
-                                        </p>
-                                        <div>
-                                            <button class="btn btn-primary" type="button">WhatsApp</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
+                    <!-- End Micro Bus -->
+
+                    <!-- Bus -->
+                    <div class="tab-pane fade" id="features-tab-4">
+                        <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+                            @foreach ($buses as $item)
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="{{ asset('storage/' . $item->img) }}" class="card-img-top"
+                                            alt="Bus 1" />
+                                        <div class="card-body">
+                                            <p class="card-text">{!! $item->desc !!}</p>
+                                            <div>
+                                                <a href="https://wa.me/62895391474416?text=Hai%20Kak,%20saya%20tertarik%20untuk%20memesan%20Bus%20ini%20apakah%20masih%20ready?"
+                                                    target="_blank" class="btn btn-success">Pesan Sekarang</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <!-- End Bus -->
+
+                    <!-- Truck -->
+                    <div class="tab-pane fade" id="features-tab-5">
+                        <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+                            @foreach ($trucks as $item)
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="{{ asset('storage/' . $item->img) }}" class="card-img-top"
+                                            alt="Truck 1" />
+                                        <div class="card-body">
+                                            <p class="card-text">{!! $item->desc !!}</p>
+                                            <div>
+                                                <a href="https://wa.me/62895391474416?text=Hai%20Kak,%20saya%20tertarik%20untuk%20memesan%20Truck%20ini%20apakah%20masih%20ready?"
+                                                    target="_blank" class="btn btn-success">Pesan Sekarang</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <!-- End Truck -->
                 </div>
+
             </div>
         </section><!-- /Features Section -->
 
@@ -613,213 +487,7 @@
 
         </section><!-- /Call To Action Section -->
 
-        <!-- Clients Section -->
-        <section id="clients" class="clients section">
 
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="swiper init-swiper">
-                    <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 5000
-                },
-                "slidesPerView": "auto",
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                },
-                "breakpoints": {
-                  "320": {
-                    "slidesPerView": 2,
-                    "spaceBetween": 40
-                  },
-                  "480": {
-                    "slidesPerView": 3,
-                    "spaceBetween": 60
-                  },
-                  "640": {
-                    "slidesPerView": 4,
-                    "spaceBetween": 80
-                  },
-                  "992": {
-                    "slidesPerView": 6,
-                    "spaceBetween": 120
-                  }
-                }
-              }
-            </script>
-                    <div class="swiper-wrapper align-items-center">
-                        <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid"
-                                alt=""></div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid"
-                                alt=""></div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid"
-                                alt=""></div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid"
-                                alt=""></div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid"
-                                alt=""></div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid"
-                                alt=""></div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid"
-                                alt=""></div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid"
-                                alt=""></div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-
-            </div>
-
-        </section><!-- /Clients Section -->
-
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="testimonials section light-background">
-
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-                <h2>Testimonials</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-            </div><!-- End Section Title -->
-
-            <div class="container">
-
-                <div class="row g-5">
-
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                            <h3>Saul Goodman</h3>
-                            <h4>Ceo &amp; Founder</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-                                    rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                                    risus at semper.</span>
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                            <h3>Sara Wilsson</h3>
-                            <h4>Designer</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
-                                    cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
-                                    legam anim culpa.</span>
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                            <h3>Jena Karlis</h3>
-                            <h4>Store Owner</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam
-                                    duis minim tempor labore quem eram duis noster aute amet eram fore quis sint
-                                    minim.</span>
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                            <h3>Matt Brandon</h3>
-                            <h4>Freelancer</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat
-                                    minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore
-                                    labore illum veniam.</span>
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                </div>
-
-            </div>
-
-        </section><!-- /Testimonials Section -->
-
-        <!-- Stats Section -->
-        <section id="stats" class="stats section">
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="row gy-4">
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Clients</p>
-                        </div>
-                    </div><!-- End Stats Item -->
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Projects</p>
-                        </div>
-                    </div><!-- End Stats Item -->
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Hours Of Support</p>
-                        </div>
-                    </div><!-- End Stats Item -->
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Workers</p>
-                        </div>
-                    </div><!-- End Stats Item -->
-
-                </div>
-
-            </div>
-
-        </section><!-- /Stats Section -->
 
         <!-- Services Section -->
         <section id="services" class="services section light-background">
@@ -899,143 +567,6 @@
             </div>
 
         </section><!-- /Services Section -->
-
-        <!-- Pricing Section -->
-        <section id="pricing" class="pricing section light-background">
-
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-                <h2>Pricing</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-            </div><!-- End Section Title -->
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="row g-4 justify-content-center">
-
-                    <!-- Basic Plan -->
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="pricing-card">
-                            <h3>Basic Plan</h3>
-                            <div class="price">
-                                <span class="currency">$</span>
-                                <span class="amount">9.9</span>
-                                <span class="period">/ month</span>
-                            </div>
-                            <p class="description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                accusantium doloremque laudantium totam.</p>
-
-                            <h4>Featured Included:</h4>
-                            <ul class="features-list">
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Duis aute irure dolor
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Excepteur sint occaecat
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Nemo enim ipsam voluptatem
-                                </li>
-                            </ul>
-
-                            <a href="#" class="btn btn-primary">
-                                Buy Now
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Standard Plan -->
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="pricing-card popular">
-                            <div class="popular-badge">Most Popular</div>
-                            <h3>Standard Plan</h3>
-                            <div class="price">
-                                <span class="currency">$</span>
-                                <span class="amount">19.9</span>
-                                <span class="period">/ month</span>
-                            </div>
-                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                                blanditiis praesentium voluptatum.</p>
-
-                            <h4>Featured Included:</h4>
-                            <ul class="features-list">
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Lorem ipsum dolor sit amet
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Consectetur adipiscing elit
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Sed do eiusmod tempor
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Ut labore et dolore magna
-                                </li>
-                            </ul>
-
-                            <a href="#" class="btn btn-light">
-                                Buy Now
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Premium Plan -->
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="pricing-card">
-                            <h3>Premium Plan</h3>
-                            <div class="price">
-                                <span class="currency">$</span>
-                                <span class="amount">39.9</span>
-                                <span class="period">/ month</span>
-                            </div>
-                            <p class="description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-                                quam nihil molestiae.</p>
-
-                            <h4>Featured Included:</h4>
-                            <ul class="features-list">
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Temporibus autem quibusdam
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Saepe eveniet ut et voluptates
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Nam libero tempore soluta
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Cumque nihil impedit quo
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Maxime placeat facere possimus
-                                </li>
-                            </ul>
-
-                            <a href="#" class="btn btn-primary">
-                                Buy Now
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section><!-- /Pricing Section -->
 
 
         <!-- Call To Action 2 Section -->

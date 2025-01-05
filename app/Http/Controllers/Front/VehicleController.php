@@ -11,55 +11,37 @@ class VehicleController extends Controller
 {
     public function vehicle()
     {
-        // Mendapatkan keyword dari request
-        $keyword = request()->keyword;
+        // Ambil kategori berdasarkan ID, misalnya 1 = City Car, 2 = MPV, dst.
+        $cityCars = Vehicle::where('status', 1)
+            ->whereHas('vehicleCategory', function ($query) {
+                $query->where('id', 1); // ID untuk City Car
+            })
+            ->get();
 
-        // Jika keyword ada, kita filter berdasarkan judul artikel
-        if ($keyword) {
-            // Mengambil artikel dengan relasi 'VehicleCategory' dan 'User'
-            $vehicles = Vehicle::with(['VehicleCategory'])
-                ->whereStatus(1)
-                ->where('title', 'like', '%' . $keyword . '%')
-                ->latest()
-                ->paginate(2); // Pastikan hanya paginate yang digunakan
-        } else {
-            // Jika tidak ada keyword, ambil artikel terbaru tanpa filter
-            $vehicles = Vehicle::with(['VehicleCategory'])
-                ->whereStatus(1)
-                ->latest()
-                ->paginate(2); // Gunakan paginate yang sama
-        }
+        $mpvs = Vehicle::where('status', 1)
+            ->whereHas('vehicleCategory', function ($query) {
+                $query->where('id', 2); // ID untuk MPV
+            })
+            ->get();
 
-        // Mengambil artikel terbaru
-        $latest_post = Vehicle::latest()->first();
+        $microBuses = Vehicle::where('status', 1)
+            ->whereHas('vehicleCategory', function ($query) {
+                $query->where('id', 3); // ID untuk Micro Bus
+            })
+            ->get();
 
-        // Mengambil semua kategori artikel
-        $vehicle_categories = VehicleCategory::latest()->get();
+        $buses = Vehicle::where('status', 1)
+            ->whereHas('vehicleCategory', function ($query) {
+                $query->where('id', 4); // ID untuk Bus
+            })
+            ->get();
 
-        return view('frontend.Vehicle.index', [
-            'latest_post' => $latest_post,
-            'vehicles' => $vehicles,
-            'keyword' => $keyword,
-            'vehicle_categories' => $vehicle_categories,
-        ]);
-    }
+        $trucks = Vehicle::where('status', 1)
+            ->whereHas('vehicleCategory', function ($query) {
+                $query->where('id', 5); // ID untuk Truck
+            })
+            ->get();
 
-    public function show($slug)
-    {
-        // Mencari artikel berdasarkan slug
-        $vehicle = Vehicle::with(['VehicleCategory']) // Eager load 'VehicleCategory' dan 'User'
-            ->whereSlug($slug)
-            ->firstOrFail();
-
-        // Increment view count
-        $vehicle->increment('views');
-
-        // Mengambil semua kategori artikel
-        $vehicle_categories = VehicleCategory::latest()->get();
-
-        return view('frontend.Vehicle.show', [
-            'Vehicle' => $vehicle,
-            'Vehicle_categories' => $vehicle_categories,
-        ]);
+        return view('frontend.Vehicle.index', compact('cityCars', 'mpvs', 'microBuses', 'buses', 'trucks'));
     }
 }

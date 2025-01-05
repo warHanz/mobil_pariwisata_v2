@@ -14,7 +14,7 @@ class PackageTour extends Model
 
     protected $guarded = [];
 
-    protected $fillable = ['package_category_id', 'title', 'slug', 'desc', 'img', 'views', 'status', 'publish_date'];
+    protected $fillable = ['package_category_id', 'title', 'slug', 'price', 'itinerary', 'desc', 'img', 'views', 'status', 'publish_date'];
 
     protected static function booted()
     {

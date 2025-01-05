@@ -18,6 +18,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
+use Filament\Tables\Columns\ToggleColumn;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\VehicleResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -48,10 +49,10 @@ class VehicleResource extends Resource
             Select::make('status')
                 ->label('status')
                 ->options([
-                    'publish' => 'Publish',
-                    'private' => 'Private',
+                    '1' => 'Publish',
+                    '0' => 'Private',
                 ])
-                ->default('publish')
+                ->default('1')
                 ->required(),
             FileUpload::make('img')->label('Image')->directory('vehicle')->image()->maxSize(10240)->columnSpan(2)->required(),
             RichEditor::make('desc')->columnSpan(2)->required(),
@@ -68,12 +69,20 @@ class VehicleResource extends Resource
                 TextColumn::make('views'),
                 ImageColumn::make('img')->label('Image'),
                 TextColumn::make('publish_date')->label('Publish Date')->formatStateUsing(fn($state) => Carbon::parse($state)->format('d M Y')),
-                TextColumn::make('status')
-                    ->label('Status')
-                    ->formatStateUsing(fn($state) => ucfirst($state))
-                    ->color(function ($state) {
-                        return $state === 'publish' ? 'success' : 'danger';
-                    }),
+                ToggleColumn::make('status')
+                    ->label('Status') // Label kolom
+                    ->onColor('success') // Warna untuk status 'publish'
+                    ->offColor('danger') // Warna untuk status 'private'
+                    ->onIcon('heroicon-o-check') // Ikon saat status 'publish'
+                    ->offIcon('heroicon-o-x-mark') // Ikon saat status 'private'
+                    ->updateStateUsing(function ($record, $state) {
+                        // Simpan status ke database
+                        $record->update([
+                            'status' => $state ? '1' : '0',
+                        ]);
+                    })
+                    ->sortable()
+                    ->searchable(),
             ])
             ->filters([
                 //

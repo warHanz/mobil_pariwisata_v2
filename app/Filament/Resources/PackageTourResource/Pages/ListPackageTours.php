@@ -21,8 +21,8 @@ class ListPackageTours extends ListRecords
     {
         return [
             'all' => Tab::make(),
-            'publish' => Tab::make()->modifyQueryUsing(fn(Builder $query) => $query->where('status', 'publish'), true),
-            'private' => Tab::make()->modifyQueryUsing(fn(Builder $query) => $query->where('status', 'private'), false),
+            'publish' => Tab::make()->modifyQueryUsing(fn(Builder $query) => $query->where('status', '1'), true),
+            'private' => Tab::make()->modifyQueryUsing(fn(Builder $query) => $query->where('status', '0'), false),
         ];
     }
 }

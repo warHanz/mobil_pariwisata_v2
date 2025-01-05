@@ -15,6 +15,8 @@ return new class extends Migration {
             $table->foreignId('package_category_id')->index()->constrained();
             $table->string('title');
             $table->string('slug');
+            $table->longText('price');
+            $table->longText('itinerary');
             $table->longText('desc');
             $table->string('img');
             $table->integer('views')->default(0);

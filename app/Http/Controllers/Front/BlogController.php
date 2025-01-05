@@ -14,14 +14,13 @@ class BlogController extends Controller
         // Mendapatkan keyword dari request
         $keyword = request()->keyword;
 
-        // Jika keyword ada, kita filter berdasarkan judul artikel
         if ($keyword) {
             // Mengambil artikel dengan relasi 'ArticleCategory' dan 'User'
             $articles = Article::with(['ArticleCategory', 'User'])
                 ->whereStatus(1)
                 ->where('title', 'like', '%' . $keyword . '%')
                 ->latest()
-                ->paginate(2); // Pastikan hanya paginate yang digunakan
+                ->paginate(3); // Pastikan hanya paginate yang digunakan
         } else {
             // Jika tidak ada keyword, ambil artikel terbaru tanpa filter
             $articles = Article::with(['ArticleCategory', 'User'])

@@ -14,6 +14,7 @@ class CategoryController extends Controller
     {
         return view('frontend.category.index', [
             'articles' => Article::with('ArticleCategory')
+                ->where('status', 1)
                 ->whereHas('ArticleCategory', function ($q) use ($slugCategory) {
                     $q->where('slug', $slugCategory);
                 })
