@@ -24,29 +24,32 @@
 
         <!-- Page content-->
         <p>Showing articles with all-article-category :</p>
-        <div class="row">
-            @foreach ($article_category as $item)
-                <div class="col-lg-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="text-center">
-                                <span>
-                                    <a href="{{ url('article-category/' . $item->slug) }}"
-                                        class="text-decoration-none text-dark">
-                                        <i class="fas fa-folder fa-5x"></i>
-                                    </a>
-                                </span>
+        <div class="container">
+            <div class="row">
+                @foreach ($article_category as $item)
+                    <div class="col-lg-4 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <span>
+                                        <a href="{{ url('article-category/' . $item->slug) }}"
+                                            class="text-decoration-none text-dark">
+                                            <i class="fas fa-folder fa-5x"></i>
+                                        </a>
+                                    </span>
 
-                                <h5 class="catd-title"><a href="{{ url('article-category/' . $item->slug) }}"
-                                        class="text-decoration-none text-dark">{{ $item->name }}
-                                        ({{ $item->articles_count }})
-                                    </a></h5>
+                                    <h5 class="catd-title"><a href="{{ url('article-category/' . $item->slug) }}"
+                                            class="text-decoration-none text-dark">{{ $item->name }}
+                                            ({{ $item->articles_count }})
+                                        </a></h5>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
-            {{-- {{ $articles->links() }} --}}
+                @endforeach
+                {{-- {{ $articles->links() }} --}}
+
+            </div>
         </div>
 
 

@@ -32,6 +32,8 @@ class ArticleResource extends Resource
 {
     protected static ?string $model = Article::class;
 
+    protected static ?string $title = 'Articles - Dashboard';
+
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     protected static ?string $navigationLabel = 'Article';
@@ -58,6 +60,7 @@ class ArticleResource extends Resource
                 ->default('1')
                 ->required(),
             FileUpload::make('img')->label('Image')->directory('article')->image()->maxSize(10240)->columnSpan(2)->required(),
+
             RichEditor::make('desc')->columnSpan(2)->required(),
             TextInput::make('publish_date')->type('date')->required(),
         ]);
@@ -65,9 +68,6 @@ class ArticleResource extends Resource
 
     public static function table(Table $table): Table
     {
-        $response = Http::get('http://127.0.0.1:8080/api/admin/article-categories');
-        $article_categories = $response->successful() ? $response->json() : [];
-
         $responseArticles = Http::get('http://127.0.0.1:8080/api/admin/articles');
         $articles = $responseArticles->successful() ? $responseArticles->json() : [];
 
@@ -98,6 +98,17 @@ class ArticleResource extends Resource
             ])
             ->actions([Tables\Actions\EditAction::make()->size('xs'), Tables\Actions\DeleteAction::make()])
             ->bulkActions([Tables\Actions\BulkActionGroup::make([Tables\Actions\DeleteBulkAction::make()])]);
+    }
+
+    public static function getArticlesFromAPI()
+    {
+        $response = Http::get('http://127.0.0.1:8080/api/admin/articles');
+
+        if ($response->successful()) {
+            return $response->json(); // Mengembalikan data artikel
+        }
+
+        return []; // Return empty array jika API gagal
     }
 
     public static function getRelations(): array

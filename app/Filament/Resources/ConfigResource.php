@@ -9,6 +9,7 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Illuminate\Support\Facades\Http;
+use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
@@ -27,7 +28,7 @@ class ConfigResource extends Resource
 
     public static function form(Form $form): Form
     {
-        return $form->schema([TextInput::make('name')->required(), TextInput::make('value')->required()]);
+        return $form->schema([TextInput::make('name')->required(), Textarea::make('value')->rows(10)->cols(20)->required()]);
     }
 
     public static function table(Table $table): Table

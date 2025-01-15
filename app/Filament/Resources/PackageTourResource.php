@@ -5,9 +5,11 @@ namespace App\Filament\Resources;
 use Carbon\Carbon;
 use Filament\Forms;
 use Filament\Tables;
+use Filament\Forms\Set;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use App\Models\PackageTour;
+use Illuminate\Support\Str;
 use App\Models\PackageCategory;
 use Filament\Resources\Resource;
 use Illuminate\Support\Facades\Http;
@@ -64,7 +66,7 @@ class PackageTourResource extends Resource
 
     public static function table(Table $table): Table
     {
-        $response = Http::get('http://127.0.0.1:8080/api/admin/package-categories');
+        $response = Http::get('http://127.0.0.1:8080/api/admin/package-tours');
         $package_categories = $response->successful() ? $response->json() : [];
 
         return $table
@@ -93,7 +95,8 @@ class PackageTourResource extends Resource
                 //
             ])
             ->actions([Tables\Actions\EditAction::make(), Tables\Actions\DeleteAction::make()])
-            ->bulkActions([Tables\Actions\BulkActionGroup::make([Tables\Actions\DeleteBulkAction::make()])]);
+            ->bulkActions([Tables\Actions\BulkActionGroup::make([Tables\Actions\DeleteBulkAction::make()])])
+            ->defaultSort('package_category_id', 'asc');
     }
 
     public static function getRelations(): array

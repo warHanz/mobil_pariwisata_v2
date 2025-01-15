@@ -1,19 +1,18 @@
 <div class="col-lg-4">
-    <div class="card border-0 rounded-0 mb-5">
+    {{-- <div class="card border-0 rounded-0 mb-5">
         <form action="{{ route('search') }}" method="POST" class="search position-relative">
             <input type="text" placeholder="Search" class="form-control">
             <i class="ti-search"></i>
         </form>
-    </div>
+    </div> --}}
 
     <div class="mb-3 follow">
         <h5 class="font-secondary mb-4"><i class="ti-minus mr-2 text-color"></i>Follow us</h5>
 
         <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
             <a href=""><i class="bi bi-facebook"></i></a>
             <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href=""><i class="bi bi-tiktok"></i></a>
         </div>
     </div>
 
@@ -28,7 +27,7 @@
                             class="img-fluid"></div>
                     <div class="col-md-8">
                         <p class="card-title">
-                            <a href="{{ 'p/' . $item->slug }}" class="text-black d-block lh-25">
+                            <a href="{{ 'p/blog/' . $item->slug }}" class="text-black d-block lh-25">
                                 {{ $item->title }}</a>
                         </p>
                     </div>
@@ -54,9 +53,9 @@
         </ul>
     </div>
 
-    <div class="mb-5 tags">
+    {{-- <div class="mb-5 tags">
         <h5 class="font-secondary mb-4"><i class="ti-minus mr-2 text-color"></i>Tags</h5>
-        {{--
+        
         <a href="#">body</a>
         <a href="#">fitness</a>
         <a href="#">health</a>
@@ -64,7 +63,7 @@
         <a href="#">plan</a>
         <a href="#">gym</a>
         <a href="#">trainer</a>
-        <a href="#">tutorials</a> --}}
-    </div>
+        <a href="#">tutorials</a>
+    </div> --}}
 
 </div>

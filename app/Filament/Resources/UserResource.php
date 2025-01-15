@@ -40,7 +40,26 @@ class UserResource extends Resource
         $article_categories = $response->successful() ? $response->json() : [];
 
         return $table
-            ->columns([TextColumn::make('name')->label('Name')->sortable()->searchable(), TextColumn::make('email')->label('Email')->sortable()->searchable()])
+            ->columns([
+                TextColumn::make('name')->label('Name')->sortable()->searchable(),
+                TextColumn::make('email')->label('Email')->sortable()->searchable(),
+                TextColumn::make('role')
+                    ->label('Role')
+                    ->badge()
+                    ->formatStateUsing(function ($state) {
+                        return $state == 0 ? 'Admin' : 'Staff';
+                    })
+                    ->color(function ($state) {
+                        return $state == 0 ? 'red' : 'green';
+                    })
+                    ->extraAttributes(function ($state) {
+                        return [
+                            'style' => 'color: ' . ($state == 0 ? 'red' : 'green') . ';',
+                        ];
+                    })
+                    ->sortable()
+                    ->searchable(),
+            ])
             ->filters([
                 //
             ])
@@ -49,13 +68,18 @@ class UserResource extends Resource
 
                 // Tombol hapus yang hanya muncul jika bukan akun admin yang sedang login
                 DeleteAction::make()->visible(function ($record) {
-                    return !(Auth::user()->role == 1 && (Auth::id() == $record->id || $record->role == 1));
+                    return !(Auth::user()->role == 0 && (Auth::id() == $record->id || $record->role == 0));
                 }),
             ])
             ->bulkActions([
                 BulkActionGroup::make([
                     // Aksi bulk untuk menghapus, dengan pengecekan agar admin tidak bisa menghapus akun admin
                     DeleteBulkAction::make()->visible(function ($records) {
+                        // Cek apakah pengguna memiliki role '0'
+                        if (Auth::user()->role === 0) {
+                            return false; // Sembunyikan tombol hapus untuk role '0'
+                        }
+
                         // Pastikan records tidak kosong dan valid
                         if (!is_array($records) || count($records) === 0) {
                             return false; // Jangan tampilkan tombol hapus jika tidak ada record yang dipilih
@@ -67,7 +91,8 @@ class UserResource extends Resource
                                 return false; // Jika ada admin, sembunyikan tombol hapus
                             }
                         }
-                        return true; // Tampilkan tombol hapus jika tidak ada admin
+
+                        return true; // Tampilkan tombol hapus jika semua kondisi terpenuhi
                     }),
                 ]),
             ]);

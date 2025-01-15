@@ -4,15 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>{{ $config['author'] }}</title>
-    <meta name="description" content="{{ $config['description'] }}">
-    <meta name="keywords" content="{{ $config['keywords'] }}">
+    <title>@yield('title', $config['author'])</title>
+    <meta name="description" content="@yield('description', $config['description'])">
+    <meta name="keywords" content="@yield('keywords', $config['keywords'])">
     <meta name="author" content="{{ $config['author'] }}">
     <meta name="robots" content="{{ $config['robots'] }}">
-    <meta name="language" content="{{ $config['robots'] }}">
+    <meta name="language" content="{{ $config['language'] }}">
     <meta name="og:type" content="{{ $config['og_type'] }}">
     <meta name="og:title" content="{{ $config['og_title'] }}">
-    <meta property="og:description" content="{{ $config['og_description'] }}">
+    <meta property="og:description" content="@yield('og_description', $config['og_description'])">
     <meta property="og:image" content="none">
     <meta property="og:url" content="none">
     <meta property="og:locale" content="{{ $config['og_locale'] }}">
@@ -77,8 +77,8 @@
     <!-- footer Start -->
     <footer id="footer" class="footer">
 
-        <div class="container footer-top">
-            <div class="row gy-4">
+        <div class="container footer-top ju">
+            <div class="row gy-4 justify-content-center">
                 <div class="col-lg-4 col-md-6 footer-about">
                     <a href="index.html" class="logo d-flex align-items-center">
                         <span class="sitename">{{ $config['author'] }}</span>
@@ -89,7 +89,7 @@
                         <p><strong>Email:</strong> <span>{{ $config['email'] }}</span></p>
                     </div>
                     <div class="social-links d-flex mt-4">
-                        <a href=""><i class="bi bi-twitter-x"></i></a>
+                        <a href=""><i class="bi bi-tiktok"></i></a>
                         <a href=""><i class="bi bi-facebook"></i></a>
                         <a href=""><i class="bi bi-instagram"></i></a>
                     </div>
@@ -111,34 +111,23 @@
                 <div class="col-lg-2 col-md-3 footer-links">
                     <h4>Our Services</h4>
                     <ul>
-                        <li><a href="#">Web Design</a></li>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Product Management</a></li>
-                        <li><a href="#">Marketing</a></li>
-                        <li><a href="#">Graphic Design</a></li>
+                        <li><a href="{{ url('vehicle') }}">Rent Car</a></li>
+                        <li><a href="{{ url('tour_package') }}">Paket Wisata</a></li>
+                        <li><a href="{{ url('regulation') }}">Rental Mobil Pernikahan</a></li>
+                        <li><a href="{{ url('regulation') }}">Antar Jemput</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Hic solutasetp</h4>
-                    <ul>
-                        <li><a href="#">Molestiae accusamus iure</a></li>
-                        <li><a href="#">Excepturi dignissimos</a></li>
-                        <li><a href="#">Suscipit distinctio</a></li>
-                        <li><a href="#">Dilecta</a></li>
-                        <li><a href="#">Sit quas consectetur</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Nobis illum</h4>
-                    <ul>
-                        <li><a href="#">Ipsam</a></li>
-                        <li><a href="#">Laudantium dolorum</a></li>
-                        <li><a href="#">Dinera</a></li>
-                        <li><a href="#">Trodelas</a></li>
-                        <li><a href="#">Flexo</a></li>
-                    </ul>
+                    <div class="payment-partner">
+                        <h4>Payment Partner</h4>
+                        <div class="partners d-flex justify-content-around">
+                            <img src="{{ asset('frontend/assets/img/mandiri.png') }}" alt="Mandiri"
+                                style="width: 50px; height: auto;">
+                            <img src="{{ asset('frontend/assets/img/bca.png') }}" alt="BCA"
+                                style="width: 50px; height: auto;">
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -152,7 +141,8 @@
 
     </footer>
     <!-- WA -->
-    <a href="https://wa.me/6288225381206?text=Hi%20Qiscus" class="floating" target="_blank">
+    <a href="https://wa.me/62895391474416?text=Hi kak, saya tertarik ingin menyewa kendaraan, apakah bisa?"
+        class="floating" target="_blank">
         <i class="fab fa-whatsapp fab-icon"></i>
     </a>
     <!-- Scroll Top -->

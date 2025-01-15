@@ -11,6 +11,10 @@ class BlogController extends Controller
 {
     public function blog()
     {
+        $config = [
+            'og_description' => null, // Hapus meta
+        ];
+
         // Mendapatkan keyword dari request
         $keyword = request()->keyword;
 

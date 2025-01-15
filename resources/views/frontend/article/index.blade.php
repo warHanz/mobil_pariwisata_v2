@@ -1,5 +1,11 @@
 @extends('layouts.frontend')
 
+@section('title', 'Blog - JayaBaruTrans')
+@section('description', $config['blog_description'])
+@section('keywords', $config['blog_keywords'])
+@section('og_description', '')
+
+
 @section('content')
     <!-- Page Title -->
     <div class="page-title bg-gray">
@@ -54,8 +60,8 @@
 
                     <!-- Nested row for non-featured blog posts-->
                     <div class="row">
-                        @foreach ($articles as $item)
-                            <div class="col-lg-6">
+                        @foreach ($articles->sortByDesc('views') as $item)
+                            <article class="col-lg-6">
                                 <!-- Blog post-->
                                 <div class="card mb-4">
                                     <a href="{{ url('p/blog/' . $item->slug) }}">
@@ -76,7 +82,7 @@
                                             →</a>
                                     </div>
                                 </div>
-                            </div>
+                            </article>
                         @endforeach
                     </div>
 

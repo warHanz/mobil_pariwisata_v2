@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Models\PackageTour;
-use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

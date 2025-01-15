@@ -66,7 +66,7 @@ class VehicleResource extends Resource
             ->columns([
                 TextColumn::make('title'),
                 TextColumn::make('vehiclecategory.name')->label('Vehicle Category'),
-                TextColumn::make('views'),
+                // TextColumn::make('views'),
                 ImageColumn::make('img')->label('Image'),
                 TextColumn::make('publish_date')->label('Publish Date')->formatStateUsing(fn($state) => Carbon::parse($state)->format('d M Y')),
                 ToggleColumn::make('status')

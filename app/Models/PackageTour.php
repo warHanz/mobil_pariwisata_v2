@@ -19,8 +19,8 @@ class PackageTour extends Model
     protected static function booted()
     {
         static::deleting(function ($package_tour) {
-            if ($package_tour->img && Storage::disk('package_tour')->exists($package_tour->img)) {
-                Storage::disk('package_tour')->delete($package_tour->img);
+            if ($package_tour->img && Storage::disk('public')->exists($package_tour->img)) {
+                Storage::disk('public')->delete($package_tour->img);
             }
         });
 

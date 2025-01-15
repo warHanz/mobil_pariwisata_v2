@@ -38,7 +38,7 @@ class RegulationResource extends Resource
         $article_categories = $response->successful() ? $response->json() : [];
 
         return $table
-            ->columns([TextColumn::make('title')->sortable()->size('xs')->searchable(), TextColumn::make('category')->sortable()->size('xs')->searchable(), TextColumn::make('desc')->sortable()->size('xs')->searchable()])
+            ->columns([TextColumn::make('title')->sortable()->size('xs')->searchable(), TextColumn::make('category')->sortable()->size('xs')->searchable(), TextColumn::make('desc')->sortable()->size('xs')->limit(50)->searchable()])
             ->filters([
                 //
             ])

@@ -1,5 +1,11 @@
 @extends('layouts.frontend')
 
+
+@section('title', 'Harga Rental Mobil Jogja 2025 - JayaBaruTrans')
+@section('description', $config['ac_description'])
+@section('keywords', $config['ac_keywords'])
+@section('og_description', '')
+
 @section('content')
     <!-- Page Title -->
     <div class="page-title bg-gray">
@@ -37,7 +43,9 @@
                                         {!! $item->desc !!}
                                     </p>
                                     <div class="text-center">
-                                        <button class="btn btn-success">WhatsApp</button>
+                                        <a href="https://wa.me/62895391474416?text=Hi kak,saya tertarik ingin menyewa kendaraan {{ $item->title }}, apakah bisa?"
+                                            target="_blank">
+                                            <button class="btn btn-success">WhatsApp</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +71,9 @@
                                         {!! $item->desc !!}
                                     </p>
                                     <div class="text-center">
-                                        <button class="btn btn-success">WhatsApp</button>
+                                        <a href="https://wa.me/62895391474416?text=Hi kak,saya tertarik ingin menyewa kendaraan {{ $item->title }}, apakah bisa?"
+                                            target="_blank">
+                                            <button class="btn btn-success">WhatsApp</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +99,9 @@
                                         {!! $item->desc !!}
                                     </p>
                                     <div class="text-center">
-                                        <button class="btn btn-success">WhatsApp</button>
+                                        <a href="https://wa.me/62895391474416?text=Hi kak,saya tertarik ingin menyewa kendaraan {{ $item->title }}, apakah bisa?"
+                                            target="_blank">
+                                            <button class="btn btn-success">WhatsApp</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +127,9 @@
                                         {!! $item->desc !!}
                                     </p>
                                     <div class="text-center">
-                                        <button class="btn btn-success">WhatsApp</button>
+                                        <a href="https://wa.me/62895391474416?text=Hi kak,saya tertarik ingin menyewa kendaraan {{ $item->title }}, apakah bisa?"
+                                            target="_blank">
+                                            <button class="btn btn-success">WhatsApp</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +155,9 @@
                                         {!! $item->desc !!}
                                     </p>
                                     <div class="text-center">
-                                        <button class="btn btn-success">WhatsApp</button>
+                                        <a href="https://wa.me/62895391474416?text=Hi kak,saya tertarik ingin menyewa kendaraan {{ $item->title }}, apakah bisa?"
+                                            target="_blank">
+                                            <button class="btn btn-success">WhatsApp</button></a>
                                     </div>
                                 </div>
                             </div>

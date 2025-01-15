@@ -1,5 +1,7 @@
 @extends('layouts.frontend')
 
+@section('title', 'Contact - JayaBaruTrans')
+
 @section('content')
     <!-- Page Title -->
     <div class="page-title bg-gray">
@@ -120,10 +122,10 @@
                 // Format body for mailto
                 this.action = `mailto:agenttripjogja@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
                 `Name: ${name}
-                                                                                        Email: ${email}
-                                                                                        
-                                                                                        Message:
-                                                                                        ${message}`
+                                                                                                Email: ${email}
+                                                                                                
+                                                                                                Message:
+                                                                                                ${message}`
             )}`;
 
                 // Show loading and sent message

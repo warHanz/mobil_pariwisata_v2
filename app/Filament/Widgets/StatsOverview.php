@@ -16,6 +16,19 @@ class StatsOverview extends BaseWidget
         $package_tour = PackageTour::count();
         $vehicle = Vehicle::count();
 
-        return [Stat::make('Article', $article)->description('32k increase')->descriptionIcon('heroicon-m-arrow-trending-up')->color('success'), Stat::make('Tour Package', $package_tour)->description('7% increase')->descriptionIcon('heroicon-m-arrow-trending-down')->color('danger'), Stat::make('Vehicle', $vehicle)->description('3% increase')->descriptionIcon('heroicon-m-arrow-trending-up')->color('success')];
+        return [
+            Stat::make('Article', $article)
+                ->description('Jumlah Total Article')
+                ->descriptionIcon('heroicon-m-arrow-trending-' . ($article >= Article::count() ? 'up' : 'down'))
+                ->color($article >= Article::count() ? 'success' : 'danger'),
+            Stat::make('Tour Package', $package_tour)
+                ->description('Jumlah Total Tour Package')
+                ->descriptionIcon('heroicon-m-arrow-trending-' . ($package_tour >= PackageTour::count() ? 'up' : 'down'))
+                ->color($package_tour >= PackageTour::count() ? 'success' : 'danger'),
+            Stat::make('Vehicle', $vehicle)
+                ->description('Jumlah Total Vehicle')
+                ->descriptionIcon('heroicon-m-arrow-trending-' . ($vehicle >= Vehicle::count() ? 'up' : 'down'))
+                ->color($vehicle >= Vehicle::count() ? 'success' : 'danger'),
+        ];
     }
 }
