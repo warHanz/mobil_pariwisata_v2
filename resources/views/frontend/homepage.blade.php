@@ -187,7 +187,7 @@
                                 <div class="col">
                                     <div class="card">
                                         <img src="{{ asset('storage/' . $item->img) }}" class="card-img-top"
-                                            alt="MPV 1" />
+                                            alt="{{ $item->title }}" />
                                         <h5 class="card-title text-center bg-primary text-white py-2">{{ $item->title }}
                                         </h5>
                                         <div class="card-body">
@@ -211,7 +211,7 @@
                                 <div class="col">
                                     <div class="card">
                                         <img src="{{ asset('storage/' . $item->img) }}" class="card-img-top"
-                                            alt="Micro Bus 1" />
+                                            alt="{{ $item->title }}" />
                                         <h5 class="card-title text-center bg-primary text-white py-2">{{ $item->title }}
                                         </h5>
                                         <div class="card-body">
@@ -235,7 +235,7 @@
                                 <div class="col">
                                     <div class="card">
                                         <img src="{{ asset('storage/' . $item->img) }}" class="card-img-top"
-                                            alt="Bus 1" />
+                                            alt="{{ $item->title }}" />
                                         <h5 class="card-title text-center bg-primary text-white py-2">{{ $item->title }}
                                         </h5>
                                         <div class="card-body">
@@ -259,7 +259,7 @@
                                 <div class="col">
                                     <div class="card">
                                         <img src="{{ asset('storage/' . $item->img) }}" class="card-img-top"
-                                            alt="Truck 1" />
+                                            alt="{{ $item->title }}" />
                                         <h5 class="card-title text-center bg-primary text-white py-2">{{ $item->title }}
                                         </h5>
                                         <div class="card-body">

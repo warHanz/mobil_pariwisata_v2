@@ -17,11 +17,13 @@
     </div><!-- End Page Title -->
 
     <section class="contact light-background">
-        <div style="padding: 0 40px;">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15813.844316629504!2d110.47841881389219!3d-7.740818340655591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5bdda01b3cc1%3A0x9650e6a9f0985415!2sJb%20Trans!5e0!3m2!1sid!2sid!4v1735561433113!5m2!1sid!2sid"
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="container">
+            <div style="padding: 0 40px;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15813.844316629504!2d110.47841881389219!3d-7.740818340655591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5bdda01b3cc1%3A0x9650e6a9f0985415!2sJb%20Trans!5e0!3m2!1sid!2sid!4v1735561433113!5m2!1sid!2sid"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </section>
 
@@ -68,9 +70,10 @@
                 <div class="col-lg-7">
                     <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
                         <h3>Get In Touch</h3>
-                        <form id="emailForm" action="mailto:agenttripjogja@gmail.com" method="post" enctype="text/plain"
+                        <form id="emailForm" action="https://api.web3forms.com/submit"method="post" enctype="text/plain"
                             class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                             <div class="row gy-4">
+                                <input type="hidden" name="access_key" value="cf32808b-2890-4b5a-8461-fd4800ef2a89">
                                 <div class="col-md-6">
                                     <input type="text" name="name" class="form-control" placeholder="Your Name"
                                         required>
@@ -84,7 +87,7 @@
                                         required>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                                    <textarea class="form-control" rows="6" placeholder="Message" required></textarea>
                                 </div>
                                 <div class="col-12 text-center">
                                     <div class="loading d-none">Loading</div>
@@ -122,10 +125,10 @@
                 // Format body for mailto
                 this.action = `mailto:agenttripjogja@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
                 `Name: ${name}
-                                                                                                Email: ${email}
-                                                                                                
-                                                                                                Message:
-                                                                                                ${message}`
+                                                                                                                                        Email: ${email}
+                                                                                                                                        
+                                                                                                                                        Message:
+                                                                                                                                        ${message}`
             )}`;
 
                 // Show loading and sent message

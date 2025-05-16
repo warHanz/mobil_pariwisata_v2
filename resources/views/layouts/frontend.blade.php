@@ -19,8 +19,8 @@
     <meta property="og:site_name" content="{{ $config['author'] }}">
 
     <!-- Favicons -->
-    <link href="{{ asset('frontend/assets/img/logo/logoatj.svg') }}" rel="icon">
-    <link href="{{ asset('frontend/assets/img/logo/logoatj.svg') }}" rel="apple-touch-icon">
+    <link href="{{ asset('frontend/assets/img/logo/jBTrans.svg') }}" rel="icon">
+    <link href="{{ asset('frontend/assets/img/logo/jBTrans.svg') }}" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -48,7 +48,8 @@
             class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-                <h1 class="sitename">{{ $config['sitename'] }}</h1>
+                <img src="{{ asset('frontend/assets/img/logo/jBTrans.svg') }}" alt="Logo" class="logo-img">
+                <h1 class="sitename ms-2">{{ $config['sitename'] }}</h1>
             </a>
 
             <nav id="navmenu" class="navmenu">
