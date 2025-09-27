@@ -58,7 +58,7 @@ Aplikasi web berbasis Laravel untuk manajemen dan penyewaan mobil pariwisata. Fi
 ## Teknologi
 
 -   Backend: Laravel
--   Frontend: Blade, Tailwind CSS, Vite
+-   Frontend: Blade, Tailwind CSS, Vite, Filament
 -   Database: MySQL
 -   Testing: PHPUnit
 
@@ -69,10 +69,6 @@ Aplikasi web berbasis Laravel untuk manajemen dan penyewaan mobil pariwisata. Fi
 3. Commit perubahan
 4. Push ke branch
 5. Buat Pull Request
-
-## Lisensi
-
-Mengikuti lisensi yang tertera di repository.
 
 ---
 
